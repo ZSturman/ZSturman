@@ -37,7 +37,7 @@ async function fetchProjects() {
 
   do {
     const response = await notion.dataSources.query({
-      data_source_id: DATA_SOURCE_ID,
+      database_id: DATA_SOURCE_ID,
       start_cursor: cursor,
       sorts: [
         {
