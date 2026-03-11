@@ -23,12 +23,12 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Update README from Notion
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_PROJECTS_DB_ID: ${{ secrets.NOTION_PROJECTS_DB_ID }}
+          NOTION_DATA_SOURCE_ID: ${{ secrets.NOTION_PROJECTS_DB_ID }}
         run: npm run update-readme
 
       - name: Commit changes
