@@ -5,7 +5,7 @@ const notion = new Client({
   auth: process.env.NOTION_TOKEN,
 });
 
-const DATA_SOURCE_ID = process.env.NOTION_PROJECTS_DB_ID;
+const DATA_SOURCE_ID = process.env.NOTION_DATA_SOURCE_ID;
 const README_PATH = "README.md";
 
 function richTextToPlain(richTextArray) {
@@ -29,18 +29,6 @@ function getUrl(page, propertyName) {
   const prop = page.properties[propertyName];
   if (!prop || prop.type !== "url") return "";
   return prop.url || "";
-}
-
-function getCheckbox(page, propertyName) {
-  const prop = page.properties[propertyName];
-  if (!prop || prop.type !== "checkbox") return false;
-  return !!prop.checkbox;
-}
-
-function getNumber(page, propertyName) {
-  const prop = page.properties[propertyName];
-  if (!prop || prop.type !== "number") return null;
-  return prop.number;
 }
 
 async function fetchProjects() {
@@ -94,10 +82,7 @@ function renderMarkdown(pages) {
 }
 
 function replaceSection(readme, startMarker, endMarker, newContent) {
-  const pattern = new RegExp(
-    `${startMarker}[\\s\\S]*?${endMarker}`,
-    "m"
-  );
+  const pattern = new RegExp(`${startMarker}[\\s\\S]*?${endMarker}`, "m");
   return readme.replace(
     pattern,
     `${startMarker}\n${newContent}\n${endMarker}`
@@ -105,6 +90,13 @@ function replaceSection(readme, startMarker, endMarker, newContent) {
 }
 
 async function main() {
+  if (!process.env.NOTION_TOKEN) {
+    throw new Error("Missing NOTION_TOKEN");
+  }
+  if (!DATA_SOURCE_ID) {
+    throw new Error("Missing NOTION_DATA_SOURCE_ID");
+  }
+
   const pages = await fetchProjects();
   const markdown = renderMarkdown(pages);
 
