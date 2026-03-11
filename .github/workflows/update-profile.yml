@@ -25,16 +25,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Update README from Notion
+      - name: Generate README variants from Notion
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_DATA_SOURCE_ID: ${{ secrets.NOTION_PROJECTS_DB_ID }}
-        run: npm run update-readme
+          NOTION_PROJECTS_DB_ID: ${{ secrets.NOTION_PROJECTS_DB_ID }}
+          NOTION_WORK_LOG_DB_ID: ${{ secrets.NOTION_WORK_LOG_DB_ID }}
+          NOTION_PERSONAL_LINKS_DB_ID: ${{ secrets.NOTION_PERSONAL_LINKS_DB_ID }}
+          NOTION_MILESTONES_DB_ID: ${{ secrets.NOTION_MILESTONES_DB_ID }}
+          NOTION_TASKS_DB_ID: ${{ secrets.NOTION_TASKS_DB_ID }}
+          NOTION_AUTOMATION_LOGS_DB_ID: ${{ secrets.NOTION_AUTOMATION_LOGS_DB_ID }}
+          PRIMARY_VARIANT: ${{ vars.PRIMARY_VARIANT }}
+        run: npm run generate-readme
 
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git diff --cached --quiet || git commit -m "Update README from Notion"
+          git add README.md README.*.md
+          git diff --cached --quiet || git commit -m "Update README variants from Notion"
           git push

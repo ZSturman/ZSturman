@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "update-readme": "node scripts/update-readme.js"
+    "generate-readme": "node scripts/generate-readme.js"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15"
