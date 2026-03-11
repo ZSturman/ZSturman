@@ -125,6 +125,10 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error(err);
+  console.error("README update failed:");
+  console.error(err.message);
+  if (err.code) console.error("Code:", err.code);
+  if (err.status) console.error("Status:", err.status);
+  if (err.body) console.error("Body:", JSON.stringify(err.body, null, 2));
   process.exit(1);
 });
