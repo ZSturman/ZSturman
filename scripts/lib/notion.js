@@ -292,6 +292,29 @@ async function fetchRecentCompletedTasks(limit = 15) {
   }));
 }
 
+// ── Resources fetcher ────────────────────────────────────────────────────────
+
+async function fetchResources() {
+  const dbId = process.env.NOTION_RESOURCES_DB_ID;
+  if (!dbId) return [];
+
+  const pages = await queryAll(dbId, {
+    filter: { property: "public", checkbox: { equals: true } },
+  });
+
+  const resources = pages.map((page) => ({
+    id: page.id,
+    resourceId: extractTitle(page, "id"),
+    label: extractRichText(page, "label"),
+    type: extractSelect(page, "type"),
+    url: extractUrl(page, "url"),
+    icon: extractSelect(page, "icon"),
+    projectIds: extractRelationTitles(page, "projects"),
+  }));
+
+  return resources;
+}
+
 // ── Relation title resolver ──────────────────────────────────────────────────
 
 async function resolvePageTitles(pageIds) {
@@ -345,6 +368,18 @@ function computeStats(data) {
     recentSessions.reduce((sum, l) => sum + (l.duration || 0), 0) / 60
   );
 
+  // Unique tags across all projects (for skills derivation)
+  const uniqueTags = [...new Set(projects.flatMap((p) => p.tags || []))];
+  const uniqueCategories = [...new Set(projects.flatMap((p) => p.category || []))];
+  const totalHoursLogged = Math.round(totalMinutes / 60);
+
+  const activeProjects = projects.filter(
+    (p) => p.status && p.status.toLowerCase().includes("active")
+  ).length;
+  const completedProjects = projects.filter(
+    (p) => p.status && p.status.toLowerCase().includes("complete")
+  ).length;
+
   return {
     totalProjects,
     totalSessions,
@@ -354,6 +389,11 @@ function computeStats(data) {
     recentTaskCount,
     sessionsLast30Days,
     hoursLast30Days,
+    uniqueTags,
+    uniqueCategories,
+    totalHoursLogged,
+    activeProjects,
+    completedProjects,
   };
 }
 
@@ -364,5 +404,6 @@ module.exports = {
   fetchPersonalLinks,
   fetchActiveMilestones,
   fetchRecentCompletedTasks,
+  fetchResources,
   computeStats,
 };

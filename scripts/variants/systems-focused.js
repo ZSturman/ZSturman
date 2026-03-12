@@ -1,7 +1,8 @@
 // Systems Focused — "Connected Studio"
 // Shows interconnection between projects, milestones, and ongoing work.
 // Studio/agency portfolio feel with rich contextual layering.
-// Uses collapsible details for depth without visual clutter.
+// Signature: Mermaid ecosystem diagram, <kbd> skills, week-grouped activity,
+// resource link badges, collapsible project details with relationship diagrams.
 
 const {
   joinLines,
@@ -20,14 +21,22 @@ const {
   relativeTime,
   truncate,
   image,
+  kbdTag,
+  mermaid,
+  linkedBadge,
+  resourceBadges,
+  sectionDivider,
 } = require("../lib/renderer");
 const { isStableImageUrl } = require("../lib/github-compat");
+const { deriveSkills } = require("../lib/skills");
 
 function generate(data) {
   const { projects, workLogs, milestones, tasks, links, stats } = data;
 
   const sections = [
     renderHero(projects),
+    renderEcosystem(projects),
+    renderStack(projects),
     renderCurrentFocus(milestones),
     renderProjectShowcase(projects),
     renderStudioActivity(workLogs, stats),
@@ -38,6 +47,8 @@ function generate(data) {
 
   return sections.filter(Boolean).join("\n\n") + "\n";
 }
+
+// ── Hero ─────────────────────────────────────────────────────────────────────
 
 function renderHero(projects) {
   // Build a dynamic positioning line from project domains
@@ -60,6 +71,81 @@ function renderHero(projects) {
   );
 }
 
+// ── Ecosystem Diagram ────────────────────────────────────────────────────────
+
+function renderEcosystem(projects) {
+  if (projects.length < 2) return null;
+
+  // Build a graph showing projects grouped by category/status with connections
+  const lines = ["graph LR"];
+
+  // Style definitions
+  lines.push("  classDef active fill:#2da44e,stroke:#2da44e,color:#fff");
+  lines.push("  classDef complete fill:#8250df,stroke:#8250df,color:#fff");
+  lines.push("  classDef default fill:#f6f8fa,stroke:#d1d9e0,color:#1f2328");
+
+  // Create nodes for each project
+  for (const p of projects) {
+    const id = safeId(p.title);
+    const label = p.title;
+    lines.push(`  ${id}["${label}"]`);
+
+    // Apply status-based styling
+    const statusLower = (p.status || "").toLowerCase();
+    if (statusLower.includes("active")) {
+      lines.push(`  class ${id} active`);
+    } else if (statusLower.includes("complete")) {
+      lines.push(`  class ${id} complete`);
+    }
+  }
+
+  // Connect projects that share tags (lightweight relationship indicator)
+  const projectPairs = [];
+  for (let i = 0; i < projects.length; i++) {
+    for (let j = i + 1; j < projects.length; j++) {
+      const shared = projects[i].tags.filter((t) => projects[j].tags.includes(t));
+      if (shared.length > 0) {
+        const a = safeId(projects[i].title);
+        const b = safeId(projects[j].title);
+        projectPairs.push(`  ${a} -.-|"${shared[0]}"| ${b}`);
+      }
+    }
+  }
+  lines.push(...projectPairs.slice(0, 6)); // Limit connections to avoid clutter
+
+  return joinLines(
+    heading(2, "Project Ecosystem"),
+    "",
+    mermaid(lines.join("\n"))
+  );
+}
+
+function safeId(str) {
+  return str.replace(/[^a-zA-Z0-9]/g, "_").replace(/_+/g, "_");
+}
+
+// ── Stack / Skills ───────────────────────────────────────────────────────────
+
+function renderStack(projects) {
+  const skills = deriveSkills(projects);
+  if (!skills.all.length) return null;
+
+  const parts = [];
+  for (const [category, items] of skills.byCategory) {
+    const tags = items.map((s) => kbdTag(s.label)).join(" ");
+    parts.push(`**${category}** ${tags}`);
+  }
+
+  return joinLines(
+    heading(3, "Stack"),
+    "",
+    ...parts,
+    ""
+  );
+}
+
+// ── Current Focus ────────────────────────────────────────────────────────────
+
 function renderCurrentFocus(milestones) {
   if (!milestones.length) return null;
 
@@ -80,13 +166,14 @@ function renderCurrentFocus(milestones) {
   return joinLines(heading(2, "Current Focus"), "", ...items);
 }
 
+// ── Project Showcase ─────────────────────────────────────────────────────────
+
 function renderProjectShowcase(projects) {
   if (!projects.length) return null;
 
-  // Group by category if categories exist, otherwise flat list
   const categorized = groupByCategory(projects);
-
   const sections = [];
+
   for (const [category, categoryProjects] of categorized) {
     if (categorized.size > 1 && category) {
       sections.push(`### ${category}`);
@@ -121,13 +208,21 @@ function renderProjectEntry(p) {
       ? " " + p.tags.map((t) => inlineCode(t)).join(" ")
       : "";
 
+  // Resource link badges (repo, download, visit, etc.)
+  const resBadges = resourceBadges(p.resources || [], "flat-square");
+  const downloadBadge =
+    !resBadges.includes("download") && p.downloadUrl
+      ? linkedBadge("Download", p.downloadUrl, { logo: "download", color: "0969da" })
+      : "";
+  const badgeLine = [resBadges, downloadBadge].filter(Boolean).join(" ");
+
   // Collapsible detail with summary, images, and fuller description
   const expandedParts = [];
   if (p.summary) expandedParts.push(p.summary);
 
   const imageUrl = pickBestImage(p);
   if (imageUrl) {
-    expandedParts.push(image(p.title, imageUrl, { width: "600", align: "center" }));
+    expandedParts.push(`<img src="${imageUrl}" alt="${p.title}" width="600" />`);
   }
 
   if (p.mediums.length > 0) {
@@ -139,9 +234,6 @@ function renderProjectEntry(p) {
   if (p.lastUpdateAt) {
     expandedParts.push(`**Last update:** ${relativeTime(p.lastUpdateAt)}`);
   }
-  if (p.downloadUrl) {
-    expandedParts.push(link("Download →", p.downloadUrl));
-  }
 
   const expandable =
     expandedParts.length > 0
@@ -151,6 +243,7 @@ function renderProjectEntry(p) {
   return joinLines(
     `${title}${subtitle}${statusLine}${tags}`,
     p.oneLiner ? `${p.oneLiner}` : "",
+    badgeLine,
     expandable,
     ""
   );
@@ -165,20 +258,37 @@ function pickBestImage(project) {
   return candidates.find((url) => isStableImageUrl(url)) || null;
 }
 
+// ── Studio Activity ──────────────────────────────────────────────────────────
+
 function renderStudioActivity(workLogs, stats) {
   if (!workLogs.length) return null;
 
-  // Build a text-based timeline visualization
-  const recentLogs = workLogs.slice(0, 8);
-  const timelineEntries = recentLogs.map((log) => {
-    const date = formatDateShort(log.date) || "—";
-    const project = log.projectName ? bold(log.projectName) : "";
-    const entry = truncate(log.entry || log.whatHappened, 80);
-    const duration = log.duration ? `${log.duration}m` : "";
-    const type = log.sessionType ? inlineCode(log.sessionType) : "";
+  // Group recent logs by week
+  const recentLogs = workLogs.slice(0, 10);
+  const weeks = groupByWeek(recentLogs);
 
-    return `◆ **${date}** ${project} ${type}\n  ${entry} ${duration ? italic(`(${duration})`) : ""}`;
-  });
+  const timelineEntries = [];
+  for (const [weekLabel, logs] of weeks) {
+    timelineEntries.push(`#### ${weekLabel}`);
+    for (const log of logs) {
+      const date = formatDateShort(log.date) || "—";
+      const project = log.projectName ? bold(log.projectName) : "";
+      const entry = truncate(log.entry || log.whatHappened, 80);
+      const duration = log.duration ? `${log.duration}m` : "";
+      const type = log.sessionType ? inlineCode(log.sessionType) : "";
+
+      timelineEntries.push(
+        `◆ **${date}** ${project} ${type}\n  ${entry} ${duration ? italic(`(${duration})`) : ""}`
+      );
+    }
+    timelineEntries.push("");
+  }
+
+  // Show next step from most recent log
+  const nextStep = recentLogs[0]?.nextStep;
+  const nextStepLine = nextStep
+    ? joinLines("", `> **Next →** ${truncate(nextStep, 120)}`, "")
+    : "";
 
   const statsLine =
     stats.sessionsLast30Days > 0
@@ -194,17 +304,35 @@ function renderStudioActivity(workLogs, stats) {
     heading(2, "Studio Activity"),
     "",
     ...timelineEntries,
+    nextStepLine,
     statsLine
   );
 }
 
+function groupByWeek(logs) {
+  const weeks = new Map();
+  for (const log of logs) {
+    if (!log.date) continue;
+    const d = new Date(log.date);
+    const weekStart = new Date(d);
+    weekStart.setDate(d.getDate() - d.getDay()); // Sunday
+    const label = `Week of ${weekStart.toLocaleDateString("en-US", { month: "short", day: "numeric" })}`;
+    if (!weeks.has(label)) weeks.set(label, []);
+    weeks.get(label).push(log);
+  }
+  return weeks;
+}
+
+// ── Recently Completed ───────────────────────────────────────────────────────
+
 function renderNextUp(tasks) {
   if (!tasks.length) return null;
 
-  const items = tasks.slice(0, 6).map((t) => {
+  const items = tasks.slice(0, 8).map((t) => {
     const project = t.projectName ? ` (${t.projectName})` : "";
     const date = t.dateCompleted ? ` — ${formatDateShort(t.dateCompleted)}` : "";
-    return `- ~~${t.task}~~${project}${date}`;
+    const type = t.type ? ` ${kbdTag(t.type)}` : "";
+    return `- ~~${t.task}~~${project}${type}${date}`;
   });
 
   return details(
@@ -212,6 +340,8 @@ function renderNextUp(tasks) {
     joinLines(...items)
   );
 }
+
+// ── Links ────────────────────────────────────────────────────────────────────
 
 function renderLinks(links) {
   if (!links.length) return null;
@@ -233,6 +363,8 @@ function renderLinks(links) {
     items.join(" · ")
   );
 }
+
+// ── Footer ───────────────────────────────────────────────────────────────────
 
 function renderFooter() {
   return joinLines(

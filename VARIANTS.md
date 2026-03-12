@@ -5,21 +5,22 @@ This repository uses a Notion-powered pipeline to generate the GitHub profile RE
 ## How it works
 
 1. **GitHub Actions** runs `scripts/generate-readme.js` on a 30-minute schedule (and on manual dispatch).
-2. The script fetches data from up to 6 Notion databases (projects, work logs, personal links, milestones, tasks, automation logs).
-3. Five distinct README variants are generated, each with a different design/storytelling approach.
-4. All variants are written to the repo as `README.<variant-name>.md`.
-5. The **primary variant** is also copied to `README.md`, which is what visitors see on the GitHub profile.
-6. Execution start, success, and failure are logged to the Notion automation logs database.
+2. The script fetches data from up to 7 Notion databases (projects, work logs, personal links, milestones, tasks, resources, automation logs).
+3. A skills system derives technical competencies from project tags and maps them to visual badge/icon services.
+4. Five distinct README variants are generated, each with a different design/storytelling approach and unique visual identity.
+5. All variants are written to the repo as `README.<variant-name>.md`.
+6. The **primary variant** is also copied to `README.md`, which is what visitors see on the GitHub profile.
+7. Execution start, success, and failure are logged to the Notion automation logs database.
 
 ## Variants
 
 | File | Style | Concept |
 | --- | --- | --- |
-| `README.minimalist-retro.md` | Terminal Portfolio | Monospaced, text-forward, retro-terminal aesthetic. No images, no badges. Pure text hierarchy. |
-| `README.editorial-clean.md` | Magazine Layout | Editorial, narrative, generous whitespace. Project cards with pull-quote styling. Images where available. |
-| `README.technical-showcase.md` | Engineering Dashboard | Data-rich tables, shields.io badges, metrics. Feels like a status dashboard. |
-| `README.quiet-premium.md` | Luxury Minimal | Maximum restraint. Top 3 projects only. Extreme negative space. Apple-style. |
-| `README.systems-focused.md` | Connected Studio | Shows interconnection between projects, milestones, and work. Studio portfolio feel. |
+| `README.minimalist-retro.md` | Terminal Portfolio | ASCII box-drawing hero, `$ cat ~/.skills` code blocks, inline resource links, duration-enhanced work log, progress bar milestones. Pure monospaced aesthetic. |
+| `README.editorial-clean.md` | Magazine Layout | Capsule-render wave header, typing SVG tagline, skillicons.dev strip, 2-column project grid with resource badges, icon-style link bar. |
+| `README.technical-showcase.md` | Engineering Dashboard | GitHub stats/streak/top-langs cards, for-the-badge skill badge grid, repo pin cards, Mermaid Gantt milestones, metrics dashboard. |
+| `README.quiet-premium.md` | Luxury Minimal | Subtle capsule-render accents, skills woven into tagline, top 3 projects with monochrome resource buttons, icon-only links, extreme negative space. |
+| `README.systems-focused.md` | Connected Studio | Mermaid graph ecosystem diagram, `<kbd>` styled skills, category-grouped projects with resource badges, week-grouped activity log, next-step display. |
 
 ## Switching the primary variant
 
@@ -47,6 +48,7 @@ PRIMARY_VARIANT=quiet-premium npm run generate-readme
 | `NOTION_PERSONAL_LINKS_DB_ID` | No | Personal Links database — profile links |
 | `NOTION_MILESTONES_DB_ID` | No | Milestones database — active goals + progress |
 | `NOTION_TASKS_DB_ID` | No | Tasks database — recent completions |
+| `NOTION_RESOURCES_DB_ID` | No | Resources database — project links, downloads, docs |
 | `NOTION_AUTOMATION_LOGS_DB_ID` | No | Automation Logs database — execution logging |
 
 Optional database IDs can be added incrementally. If a database ID is missing, the corresponding data is simply omitted from generated variants — no errors.
@@ -65,6 +67,7 @@ export NOTION_WORK_LOG_DB_ID="your-work-log-db-id"
 export NOTION_PERSONAL_LINKS_DB_ID="your-links-db-id"
 export NOTION_MILESTONES_DB_ID="your-milestones-db-id"
 export NOTION_TASKS_DB_ID="your-tasks-db-id"
+export NOTION_RESOURCES_DB_ID="your-resources-db-id"
 export NOTION_AUTOMATION_LOGS_DB_ID="your-automation-logs-db-id"
 
 npm ci
@@ -84,7 +87,7 @@ Output files will be written to the repo root:
 
 1. Create a new file in `scripts/variants/` (e.g., `my-new-style.js`).
 2. Export a `generate(data)` function that returns a markdown string.
-3. The `data` object contains: `{ projects, workLogs, links, milestones, tasks, stats }`.
+3. The `data` object contains: `{ projects, workLogs, links, milestones, tasks, resources, stats }`.
 4. Register the variant in `scripts/generate-readme.js` by adding it to the `VARIANTS` object.
 5. The new variant will automatically be generated on the next run.
 
@@ -93,7 +96,8 @@ The `data` shape:
 ```text
 projects[]     — { title, oneLiner, summary, subtitle, status, phase, tags[], category[],
                    mediums[], repoLink, thumbnailPreview, heroPreview, bannerPreview,
-                   iconPreview, posterPreview, downloadUrl, lastUpdateAt, startedAt }
+                   iconPreview, posterPreview, downloadUrl, lastUpdateAt, startedAt,
+                   resources[] }  ← resources attached from Resources DB
 
 workLogs[]     — { date, entry, whatHappened, projectName, sessionType, duration,
                    nextStep, problems }
@@ -105,9 +109,27 @@ milestones[]   — { milestone, description, projectName, totalTasks, completedT
 
 tasks[]        — { task, projectName, dateCompleted, type, priority }
 
+resources[]    — { id, label, type, url, icon, projectIds[] }
+
 stats          — { totalProjects, totalSessions, totalMinutes, avgSessionMinutes,
-                   activeMilestones, recentTaskCount, sessionsLast30Days, hoursLast30Days }
+                   activeMilestones, recentTaskCount, sessionsLast30Days, hoursLast30Days,
+                   uniqueTags, uniqueCategories, totalHoursLogged, activeProjects,
+                   completedProjects }
 ```
+
+## External visual services
+
+The variants use several free visual-embed services that render on-the-fly inside GitHub markdown:
+
+| Service | Used For | Variants |
+| --- | --- | --- |
+| [shields.io](https://shields.io) | Badges (stats, skills, links, resources) | All |
+| [capsule-render](https://capsule-render.vercel.app) | Wave/gradient headers and footers | editorial-clean, quiet-premium |
+| [skillicons.dev](https://skillicons.dev) | Skill icon strips | editorial-clean |
+| [github-readme-stats](https://github-readme-stats.vercel.app) | Stats card, streak, top languages, repo pins | technical-showcase |
+| [readme-typing-svg](https://readme-typing-svg.demolab.com) | Animated typing taglines | editorial-clean |
+
+All URLs are from known-stable hosts listed in `github-compat.js`.
 
 ## Image handling
 
@@ -135,7 +157,8 @@ scripts/
 ├── generate-readme.js          # Orchestrator — the main entry point
 ├── lib/
 │   ├── notion.js               # Notion client + all data fetchers
-│   ├── renderer.js             # Shared markdown rendering helpers
+│   ├── renderer.js             # Shared markdown rendering helpers (30+ helpers)
+│   ├── skills.js               # Skills derivation + badge/icon rendering
 │   ├── automation-log.js       # Notion automation log writer
 │   └── github-compat.js        # GitHub README rendering compatibility
 └── variants/

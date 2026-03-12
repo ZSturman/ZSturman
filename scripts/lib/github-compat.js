@@ -9,6 +9,19 @@ const NOTION_S3_PATTERNS = [
   "secure.notion-static.com",
 ];
 
+// External services known to produce stable, long-lived image URLs.
+// These are safe to embed in GitHub profile READMEs.
+const KNOWN_STABLE_HOSTS = [
+  "img.shields.io",
+  "capsule-render.vercel.app",
+  "skillicons.dev",
+  "github-readme-stats.vercel.app",
+  "github-readme-streak-stats.herokuapp.com",
+  "readme-typing-svg.demolab.com",
+  "raw.githubusercontent.com",
+  "user-images.githubusercontent.com",
+];
+
 /**
  * Returns true if the URL is likely to remain accessible long-term.
  * Returns false for Notion-hosted S3 signed URLs and null/undefined.
@@ -84,4 +97,5 @@ module.exports = {
   SUPPORTED_TAGS,
   SUPPORTED_ATTRS,
   NOTION_S3_PATTERNS,
+  KNOWN_STABLE_HOSTS,
 };

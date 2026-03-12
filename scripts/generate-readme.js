@@ -11,6 +11,7 @@
 //   NOTION_PERSONAL_LINKS_DB_ID   — Personal Links database ID
 //   NOTION_MILESTONES_DB_ID       — Milestones database ID
 //   NOTION_TASKS_DB_ID            — Tasks database ID
+//   NOTION_RESOURCES_DB_ID        — Resources database ID
 //   NOTION_AUTOMATION_LOGS_DB_ID  — Automation Logs database ID
 //   PRIMARY_VARIANT                — Which variant to copy to README.md
 //                                    (default: "editorial-clean")
@@ -24,6 +25,7 @@ const {
   fetchPersonalLinks,
   fetchActiveMilestones,
   fetchRecentCompletedTasks,
+  fetchResources,
   computeStats,
 } = require("./lib/notion");
 
@@ -81,12 +83,14 @@ async function main() {
       linksResult,
       milestonesResult,
       tasksResult,
+      resourcesResult,
     ] = await Promise.allSettled([
       fetchFeaturedProjects(),
       fetchRecentWorkLogs(10),
       fetchPersonalLinks(),
       fetchActiveMilestones(),
       fetchRecentCompletedTasks(15),
+      fetchResources(),
     ]);
 
     const projects = unwrap(projectsResult, "projects");
@@ -94,15 +98,29 @@ async function main() {
     const links = unwrap(linksResult, "personalLinks");
     const milestones = unwrap(milestonesResult, "milestones");
     const tasks = unwrap(tasksResult, "tasks");
+    const resources = unwrap(resourcesResult, "resources");
+
+    // Attach resources to their parent projects
+    const resourcesByProject = new Map();
+    for (const r of resources) {
+      for (const pid of r.projectIds) {
+        if (!resourcesByProject.has(pid)) resourcesByProject.set(pid, []);
+        resourcesByProject.get(pid).push(r);
+      }
+    }
+    for (const p of projects) {
+      p.resources = resourcesByProject.get(p.id) || [];
+    }
 
     const stats = computeStats({ projects, workLogs, milestones, tasks });
 
     console.log(
       `Fetched: ${projects.length} projects, ${workLogs.length} work logs, ` +
-        `${links.length} links, ${milestones.length} milestones, ${tasks.length} tasks`
+        `${links.length} links, ${milestones.length} milestones, ` +
+        `${tasks.length} tasks, ${resources.length} resources`
     );
 
-    const data = { projects, workLogs, links, milestones, tasks, stats };
+    const data = { projects, workLogs, links, milestones, tasks, resources, stats };
 
     // ── Generate all variants ───────────────────────────────────────────
     console.log("Generating variants...");
