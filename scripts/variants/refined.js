@@ -18,7 +18,6 @@ const {
   table,
   details,
   alignCenter,
-  divider,
   formatDateShort,
   truncate,
   linkedBadge,
@@ -48,7 +47,7 @@ function generate(data) {
     renderStats(),
     renderProjects(projects),
     renderRecentWork(workLogs, stats),
-    renderMilestones(milestones, projects),
+    renderMilestones(milestones),
     renderLinks(links),
     renderFooter(links),
   ];
@@ -124,28 +123,24 @@ function renderProjects(projects) {
 
   const items = projects.map((p) => renderProjectEntry(p));
 
-  return joinLines(heading(2, "Selected Work"), "", ...items);
+  // Join projects with a horizontal rule (with blank lines around it for correct rendering)
+  return "## Selected Work\n\n" + items.join("\n\n---\n\n");
 }
 
 function renderProjectEntry(p) {
+  // Build parts array — each element becomes a paragraph separated by blank lines
+  const parts = [];
+
   // Title — prominent, linked if repo available (check resources for repo too)
   const repoUrl = findRepoUrl(p);
   const titleText = repoUrl ? link(bold(p.title), repoUrl) : bold(p.title);
   const subtitle = p.subtitle ? `\n${italic(p.subtitle)}` : "";
+  parts.push(`### ${titleText}${subtitle}`);
 
   // One liner — always visible
-  const oneLiner = p.oneLiner ? `> ${p.oneLiner}` : "";
+  if (p.oneLiner) parts.push(`> ${p.oneLiner}`);
 
-  // Status + Phase — less prominent
-  const statusPhase = [p.status, p.phase].filter(Boolean).join(" · ");
-  const statusLine = statusPhase ? italic(statusPhase) : "";
-
-  // Tags
-  const tags = p.tags.length
-    ? p.tags.map((t) => inlineCode(t)).join(" ")
-    : "";
-
-  // Resource link badges
+  // Resource link badges (shown prominently after one liner)
   const resBadges = resourceBadges(p.resources || [], "flat-square");
   const downloadBadge =
     !resBadges.includes("download") && p.downloadUrl
@@ -155,28 +150,24 @@ function renderProjectEntry(p) {
         })
       : "";
   const badgeLine = [resBadges, downloadBadge].filter(Boolean).join(" ");
+  if (badgeLine) parts.push(badgeLine);
+
+  // Tags
+  if (p.tags.length) {
+    parts.push(p.tags.map((t) => inlineCode(t)).join(" "));
+  }
+
+  // Status + Phase — less prominent, at the end
+  const statusPhase = [p.status, p.phase].filter(Boolean).join(" · ");
+  if (statusPhase) parts.push(italic(statusPhase));
 
   // Collapsible summary / description
-  const expandable =
-    p.summary
-      ? "\n" + details("More details", p.summary)
-      : "";
+  if (p.summary) {
+    parts.push(details("More details", `> ${p.summary}`));
+  }
 
-  return joinLines(
-    `### ${titleText}${subtitle}`,
-    "",
-    oneLiner,
-    "",
-    statusLine,
-    "",
-    tags,
-    "",
-    badgeLine,
-    expandable,
-    "",
-    divider(),
-    ""
-  );
+  // Double newlines between parts ensures proper markdown paragraph separation
+  return parts.join("\n\n");
 }
 
 // ── Section 4 — Recent Work (table hybrid) ──────────────────────────────────
@@ -206,54 +197,22 @@ function renderRecentWork(workLogs, stats) {
   );
 }
 
-// ── Section 5 — Active Milestones (table, no Gantt, with links) ─────────────
+// ── Section 5 — Active Milestones (table, no Gantt, no links column) ────────
 
-function renderMilestones(milestones, projects) {
+function renderMilestones(milestones) {
   if (!milestones.length) return null;
 
-  // Build a map of project ID → resources for link resolution
-  const projectMap = new Map();
-  for (const p of projects) {
-    projectMap.set(p.id, p);
-  }
-
-  const headers = ["Milestone", "Project", "Progress", "Status", "Links"];
+  const headers = ["Milestone", "Project", "Progress", "Status"];
   const rows = milestones.map((m) => {
     const pct = m.taskPercentComplete ?? 0;
     const bar = `\`${progressBar(pct, 12)}\``;
     const project = m.projectName || "—";
     const status = m.isBlocked ? "⚠ Blocked" : m.status || "In Progress";
 
-    // Resolve links: milestone → projectIds → project.resources → prefer repo
-    const links = resolveLinksForMilestone(m, projectMap);
-
-    return [bold(m.milestone), project, bar, status, links];
+    return [bold(m.milestone), project, bar, status];
   });
 
   return joinLines(heading(2, "Active Milestones"), "", table(headers, rows));
-}
-
-function resolveLinksForMilestone(milestone, projectMap) {
-  const resourceLinks = [];
-
-  for (const pid of milestone.projectIds || []) {
-    const project = projectMap.get(pid);
-    if (!project || !project.resources) continue;
-
-    // Prefer 'repo' type, then fall back to others
-    const sorted = [...project.resources].sort((a, b) => {
-      const order = { repo: 0, visit: 1, install: 2 };
-      return (order[a.type] ?? 3) - (order[b.type] ?? 3);
-    });
-
-    for (const r of sorted.slice(0, 2)) {
-      if (r.url) {
-        resourceLinks.push(link(r.label || r.type || "Link", r.url));
-      }
-    }
-  }
-
-  return resourceLinks.length ? resourceLinks.join(", ") : "—";
 }
 
 // ── Section 6 — Contact / Links ─────────────────────────────────────────────

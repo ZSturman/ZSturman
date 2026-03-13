@@ -101,16 +101,33 @@ async function main() {
     const tasks = unwrap(tasksResult, "tasks");
     const resources = unwrap(resourcesResult, "resources");
 
-    // Attach resources to their parent projects
+    // Attach resources to their parent projects.
+    // Use two strategies: (1) resource's projectIds (reverse relation),
+    // (2) project's own repoIds + resourceIds (forward relations).
+    const resourceById = new Map();
     const resourcesByProject = new Map();
     for (const r of resources) {
+      resourceById.set(r.id, r);
       for (const pid of r.projectIds) {
         if (!resourcesByProject.has(pid)) resourcesByProject.set(pid, []);
         resourcesByProject.get(pid).push(r);
       }
     }
     for (const p of projects) {
-      p.resources = resourcesByProject.get(p.id) || [];
+      const fromReverse = resourcesByProject.get(p.id) || [];
+      const directIds = new Set([...(p.repoIds || []), ...(p.resourceIds || [])]);
+      const fromDirect = [...directIds]
+        .map((id) => resourceById.get(id))
+        .filter(Boolean);
+      // Merge and deduplicate by resource ID
+      const seen = new Set();
+      p.resources = [];
+      for (const r of [...fromDirect, ...fromReverse]) {
+        if (!seen.has(r.id)) {
+          seen.add(r.id);
+          p.resources.push(r);
+        }
+      }
     }
 
     const stats = computeStats({ projects, workLogs, milestones, tasks });
