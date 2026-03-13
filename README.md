@@ -1,18 +1,29 @@
-# Zachary Sturman
+<div align="center">
 
-Short bio here.
+![header](https://capsule-render.vercel.app/api?type=waving&color=0%3A6b7b8d%2C100%3A8e9eab&height=220&section=header&text=Zachary+Sturman&fontSize=50&fontColor=ffffff&desc=product+engineer+%C2%B7+designer+%C2%B7+systems+thinker&descSize=18&descAlignY=75)
 
-## Current Projects
-<!-- notion-projects:start -->
-- **Top Note** — A widget-first productivity app that keeps you focused on what's next and only on what’s next.
-- **ChewSense** — An iOS app that uses AirPods’ motion sensors to detect chewing and help users eat more mindfully by slowing down their pace.
-- **Episodic Memory Agent** — A modular cognitive agent framework that models how experience becomes memory.
-- **MediLedger** — A medication management tool centered on interactive Home Screen widgets. Users can log doses, track supply, monitor refills, and sync across Apple devices—moving medication tracking from the app to the widget for faster, simpler daily adherence.
-- **Frontend Collection** — This collection brings together different versions of my portfolio, each one capturing how my design sense, presentation choices, technical skill, and even career direction have shifted and sharpened over time.
-- **zachary-sturman.com** — 2026 Portfolio 
-<!-- notion-projects:end -->
+</div>
+<div align="center">
 
-## Elsewhere
-- Website
-- X
-- LinkedIn
+![Typing SVG](https://readme-typing-svg.demolab.com?lines=Building+tools+that+think+clearly+about+how+people+work%3BiOS+apps%2C+automation+systems%2C+and+cognitive+architectures%3BDesign-minded+engineering+with+attention+to+craft&color=6b7b8d&size=20&center=true&vCenter=true&width=600&duration=3500&pause=1200)
+
+</div>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
+
+<div align="center">
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=ZSturman&show_icons=true&theme=transparent&hide_title=false&hide_border=true&hide_rank=true)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ZSturman&theme=transparent&layout=compact&hide_border=true&langs_count=8)
+
+</div>
+
+<div align="center">
+
+<sub>This page is generated from a Notion workspace and updates automatically.</sub>
+
+</div>
+<div align="center">
+
+![header](https://capsule-render.vercel.app/api?type=waving&color=0%3A8e9eab%2C100%3A6b7b8d&height=100&section=footer)
+
+</div>

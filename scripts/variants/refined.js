@@ -116,32 +116,45 @@ function renderStats() {
   );
 }
 
-// ── Section 3 — Projects ────────────────────────────────────────────────────
+// ── Section 3 — Projects (GitHub Repo Cards) ───────────────────────────────
 
 function renderProjects(projects) {
   if (!projects.length) return null;
 
   const items = projects.map((p) => renderProjectEntry(p));
 
-  // Join projects with a horizontal rule (with blank lines around it for correct rendering)
   return "## Selected Work\n\n" + items.join("\n\n---\n\n");
 }
 
 function renderProjectEntry(p) {
-  // Build parts array — each element becomes a paragraph separated by blank lines
   const parts = [];
 
-  // Title — prominent, linked if repo available (check resources for repo too)
+  // Extract GitHub repo info from resources to build a repo card
   const repoUrl = findRepoUrl(p);
-  const titleText = repoUrl ? link(bold(p.title), repoUrl) : bold(p.title);
-  const subtitle = p.subtitle ? `\n${italic(p.subtitle)}` : "";
-  parts.push(`### ${titleText}${subtitle}`);
+  const repoName = extractGitHubRepoName(repoUrl);
 
-  // One liner — always visible
-  if (p.oneLiner) parts.push(`> ${p.oneLiner}`);
+  if (repoName) {
+    // GitHub Repo Card via github-readme-stats
+    const cardUrl =
+      `https://github-readme-stats.vercel.app/api/pin/` +
+      `?username=ZSturman&repo=${encodeURIComponent(repoName)}` +
+      `&theme=transparent&hide_border=true`;
+    parts.push(`[![${p.title}](${cardUrl})](${repoUrl})`);
+  } else {
+    // Fallback for projects without a GitHub repo
+    const titleText = repoUrl ? link(bold(p.title), repoUrl) : bold(p.title);
+    parts.push(`### ${titleText}`);
+    if (p.oneLiner) parts.push(`> ${p.oneLiner}`);
+  }
 
-  // Resource link badges (shown prominently after one liner)
-  const resBadges = resourceBadges(p.resources || [], "flat-square");
+  // Tags
+  if (p.tags && p.tags.length) {
+    parts.push(p.tags.map((t) => inlineCode(t)).join(" "));
+  }
+
+  // Non-repo resource badges (visit, install, download, etc.)
+  const nonRepoResources = (p.resources || []).filter((r) => r.type !== "repo");
+  const resBadges = resourceBadges(nonRepoResources, "flat-square");
   const downloadBadge =
     !resBadges.includes("download") && p.downloadUrl
       ? linkedBadge("Download", p.downloadUrl, {
@@ -152,22 +165,14 @@ function renderProjectEntry(p) {
   const badgeLine = [resBadges, downloadBadge].filter(Boolean).join(" ");
   if (badgeLine) parts.push(badgeLine);
 
-  // Tags
-  if (p.tags.length) {
-    parts.push(p.tags.map((t) => inlineCode(t)).join(" "));
-  }
-
-  // Status + Phase — less prominent, at the end
-  const statusPhase = [p.status, p.phase].filter(Boolean).join(" · ");
-  if (statusPhase) parts.push(italic(statusPhase));
-
-  // Collapsible summary / description
-  if (p.summary) {
-    parts.push(details("More details", `> ${p.summary}`));
-  }
-
-  // Double newlines between parts ensures proper markdown paragraph separation
   return parts.join("\n\n");
+}
+
+/** Extract the repo name from a GitHub URL, e.g. "Episodic-Memory-Agent" */
+function extractGitHubRepoName(url) {
+  if (!url) return null;
+  const m = url.match(/github\.com\/[^/]+\/([^/]+)/i);
+  return m ? m[1].replace(/\.git$/, "") : null;
 }
 
 // ── Section 4 — Recent Work (table hybrid) ──────────────────────────────────
@@ -175,13 +180,13 @@ function renderProjectEntry(p) {
 function renderRecentWork(workLogs, stats) {
   if (!workLogs.length) return null;
 
-  const headers = ["Date", "Project", "Duration", "Entry"];
+  const headers = ["Date", "Project", "Entry", "What Happened"];
   const rows = workLogs.slice(0, 7).map((log) => {
     const date = formatDateShort(log.date) || "—";
     const project = log.projectName || "—";
-    const duration = log.duration ? `${log.duration}m` : "—";
-    const entry = truncate(log.entry || log.whatHappened, 60);
-    return [date, project, duration, entry];
+    const entry = truncate(log.entry || "", 50);
+    const whatHappened = truncate(log.whatHappened || "", 60);
+    return [date, project, entry, whatHappened];
   });
 
   const statsLine =

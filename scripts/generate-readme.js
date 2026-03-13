@@ -18,6 +18,9 @@
 
 const fs = require("fs");
 const path = require("path");
+// Load environment variables from a local .env file when running manually.
+require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
+
 
 const {
   fetchFeaturedProjects,
@@ -42,7 +45,7 @@ const VARIANTS = {
   "refined": require("./variants/refined"),
 };
 
-const DEFAULT_PRIMARY = "editorial-clean";
+const DEFAULT_PRIMARY = "refined";
 
 // ── Main ─────────────────────────────────────────────────────────────────────
 
