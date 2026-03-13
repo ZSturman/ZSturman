@@ -116,45 +116,33 @@ function renderStats() {
   );
 }
 
-// ── Section 3 — Projects (GitHub Repo Cards) ───────────────────────────────
+// ── Section 3 — Projects ────────────────────────────────────────────────────
 
 function renderProjects(projects) {
   if (!projects.length) return null;
 
   const items = projects.map((p) => renderProjectEntry(p));
 
+  // Join projects with a horizontal rule (with blank lines around it for correct rendering)
   return "## Selected Work\n\n" + items.join("\n\n---\n\n");
 }
 
 function renderProjectEntry(p) {
+  // Build parts array — each element becomes a paragraph separated by blank lines
   const parts = [];
 
-  // Extract GitHub repo info from resources to build a repo card
+  // Title — prominent, linked if repo available (check resources for repo too)
   const repoUrl = findRepoUrl(p);
-  const repoName = extractGitHubRepoName(repoUrl);
+  const titleText = repoUrl ? link(bold(p.title), repoUrl) : bold(p.title);
+  const subtitle = p.subtitle ? `\n${italic(p.subtitle)}` : "";
+  parts.push(`### ${titleText}${subtitle}`);
 
-  if (repoName) {
-    // GitHub Repo Card via github-readme-stats
-    const cardUrl =
-      `https://github-readme-stats.vercel.app/api/pin/` +
-      `?username=ZSturman&repo=${encodeURIComponent(repoName)}` +
-      `&theme=transparent&hide_border=true`;
-    parts.push(`[![${p.title}](${cardUrl})](${repoUrl})`);
-  } else {
-    // Fallback for projects without a GitHub repo
-    const titleText = repoUrl ? link(bold(p.title), repoUrl) : bold(p.title);
-    parts.push(`### ${titleText}`);
-    if (p.oneLiner) parts.push(`> ${p.oneLiner}`);
-  }
+  // Status + Phase
+  const statusPhase = [p.status, p.phase].filter(Boolean).join(" · ");
+  if (statusPhase) parts.push(italic(statusPhase));
 
-  // Tags
-  if (p.tags && p.tags.length) {
-    parts.push(p.tags.map((t) => inlineCode(t)).join(" "));
-  }
-
-  // Non-repo resource badges (visit, install, download, etc.)
-  const nonRepoResources = (p.resources || []).filter((r) => r.type !== "repo");
-  const resBadges = resourceBadges(nonRepoResources, "flat-square");
+  // Resource link badges (shown prominently after status)
+  const resBadges = resourceBadges(p.resources || [], "flat-square");
   const downloadBadge =
     !resBadges.includes("download") && p.downloadUrl
       ? linkedBadge("Download", p.downloadUrl, {
@@ -165,14 +153,16 @@ function renderProjectEntry(p) {
   const badgeLine = [resBadges, downloadBadge].filter(Boolean).join(" ");
   if (badgeLine) parts.push(badgeLine);
 
-  return parts.join("\n\n");
-}
+  // One liner — always visible
+  if (p.oneLiner) parts.push(`> ${p.oneLiner}`);
 
-/** Extract the repo name from a GitHub URL, e.g. "Episodic-Memory-Agent" */
-function extractGitHubRepoName(url) {
-  if (!url) return null;
-  const m = url.match(/github\.com\/[^/]+\/([^/]+)/i);
-  return m ? m[1].replace(/\.git$/, "") : null;
+  // Collapsible summary / description
+  if (p.summary) {
+    parts.push(details("More details", `> ${p.summary}`));
+  }
+
+  // Double newlines between parts ensures proper markdown paragraph separation
+  return parts.join("\n\n");
 }
 
 // ── Section 4 — Recent Work (table hybrid) ──────────────────────────────────

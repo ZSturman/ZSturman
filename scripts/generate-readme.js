@@ -13,8 +13,6 @@
 //   NOTION_TASKS_DB_ID            — Tasks database ID
 //   NOTION_RESOURCES_DB_ID        — Resources database ID
 //   NOTION_AUTOMATION_LOGS_DB_ID  — Automation Logs database ID
-//   PRIMARY_VARIANT                — Which variant to copy to README.md
-//                                    (default: "editorial-clean")
 
 const fs = require("fs");
 const path = require("path");
@@ -34,18 +32,7 @@ const {
 
 const { logStart, logSuccess, logFailure } = require("./lib/automation-log");
 
-// ── Variant registry ─────────────────────────────────────────────────────────
-
-const VARIANTS = {
-  "minimalist-retro": require("./variants/minimalist-retro"),
-  "editorial-clean": require("./variants/editorial-clean"),
-  "technical-showcase": require("./variants/technical-showcase"),
-  "quiet-premium": require("./variants/quiet-premium"),
-  "systems-focused": require("./variants/systems-focused"),
-  "refined": require("./variants/refined"),
-};
-
-const DEFAULT_PRIMARY = "refined";
+const refined = require("./variants/refined");
 
 // ── Main ─────────────────────────────────────────────────────────────────────
 
@@ -56,13 +43,6 @@ async function main() {
   }
   if (!process.env.NOTION_PROJECTS_DB_ID) {
     throw new Error("Missing NOTION_PROJECTS_DB_ID");
-  }
-
-  const primaryVariant = process.env.PRIMARY_VARIANT || DEFAULT_PRIMARY;
-  if (!VARIANTS[primaryVariant]) {
-    throw new Error(
-      `Unknown PRIMARY_VARIANT "${primaryVariant}". Available: ${Object.keys(VARIANTS).join(", ")}`
-    );
   }
 
   // Determine trigger source for logging
@@ -143,53 +123,19 @@ async function main() {
 
     const data = { projects, workLogs, links, milestones, tasks, resources, stats };
 
-    // ── Generate all variants ───────────────────────────────────────────
-    console.log("Generating variants...");
+    // ── Generate README ─────────────────────────────────────────────────
+    console.log("Generating README...");
 
-    const generated = {};
-    for (const [name, variant] of Object.entries(VARIANTS)) {
-      try {
-        generated[name] = variant.generate(data);
-        console.log(`  ✓ ${name}`);
-      } catch (err) {
-        console.error(`  ✗ ${name}: ${err.message}`);
-        generated[name] = null;
-      }
-    }
+    const content = refined.generate(data);
 
-    // ── Write output files ──────────────────────────────────────────────
-    console.log("Writing output files...");
-
-    let filesWritten = 0;
-    for (const [name, content] of Object.entries(generated)) {
-      if (!content) continue;
-      const filename = `README.${name}.md`;
-      fs.writeFileSync(filename, content);
-      console.log(`  → ${filename}`);
-      filesWritten++;
-    }
-
-    // Copy primary variant to README.md
-    const primaryContent = generated[primaryVariant];
-    if (primaryContent) {
-      fs.writeFileSync("README.md", primaryContent);
-      console.log(`  → README.md (from ${primaryVariant})`);
-      filesWritten++;
-    } else {
-      console.warn(
-        `Primary variant "${primaryVariant}" failed — README.md not updated.`
-      );
-    }
-
-    console.log(`Done. ${filesWritten} files written.`);
+    // ── Write output file ───────────────────────────────────────────────
+    fs.writeFileSync("README.md", content);
+    console.log("  → README.md");
+    console.log("Done.");
 
     // ── Log success ─────────────────────────────────────────────────────
-    const variantNames = Object.entries(generated)
-      .filter(([, v]) => v !== null)
-      .map(([n]) => n);
-
     await logSuccess(logPageId, {
-      details: `Generated ${variantNames.length} variants: ${variantNames.join(", ")}. Primary: ${primaryVariant}.`,
+      details: `Generated README.md from refined variant.`,
       projectsCount: projects.length,
       workLogsCount: workLogs.length,
     });
