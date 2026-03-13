@@ -33,6 +33,7 @@ jobs:
           NOTION_PERSONAL_LINKS_DB_ID: ${{ secrets.NOTION_PERSONAL_LINKS_DB_ID }}
           NOTION_MILESTONES_DB_ID: ${{ secrets.NOTION_MILESTONES_DB_ID }}
           NOTION_TASKS_DB_ID: ${{ secrets.NOTION_TASKS_DB_ID }}
+          NOTION_RESOURCES_DB_ID: ${{ secrets.NOTION_RESOURCES_DB_ID }}
           NOTION_AUTOMATION_LOGS_DB_ID: ${{ secrets.NOTION_AUTOMATION_LOGS_DB_ID }}
         run: npm run generate-readme
 

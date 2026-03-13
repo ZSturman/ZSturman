@@ -131,15 +131,14 @@ function renderProjectEntry(p) {
   // Build parts array — each element becomes a paragraph separated by blank lines
   const parts = [];
 
-  // Title — prominent, linked if repo available (check resources for repo too)
+  // Title — prominent, linked if repo available, with status+phase inline
   const repoUrl = findRepoUrl(p);
   const titleText = repoUrl ? link(bold(p.title), repoUrl) : bold(p.title);
-  const subtitle = p.subtitle ? `\n${italic(p.subtitle)}` : "";
-  parts.push(`### ${titleText}${subtitle}`);
-
-  // Status + Phase
   const statusPhase = [p.status, p.phase].filter(Boolean).join(" · ");
-  if (statusPhase) parts.push(italic(statusPhase));
+  const statusSpan = statusPhase
+    ? ` <sub><sup style="color:#999">${statusPhase}</sup></sub>`
+    : "";
+  parts.push(`### ${titleText}${statusSpan}`);
 
   // Resource link badges (shown prominently after status)
   const resBadges = resourceBadges(p.resources || [], "flat-square");
@@ -158,7 +157,9 @@ function renderProjectEntry(p) {
 
   // Collapsible summary / description
   if (p.summary) {
-    parts.push(details("More details", `> ${p.summary}`));
+    // Sanitize newlines so they don't break the blockquote/callout
+    const cleanSummary = p.summary.replace(/\n+/g, " ").trim();
+    parts.push(details("More details", `> ${cleanSummary}`));
   }
 
   // Double newlines between parts ensures proper markdown paragraph separation
@@ -179,16 +180,10 @@ function renderRecentWork(workLogs, stats) {
     return [date, project, entry, whatHappened];
   });
 
-  const statsLine =
-    stats.sessionsLast30Days > 0
-      ? `\n*${stats.sessionsLast30Days} sessions · ${stats.hoursLast30Days}h logged in the last 30 days.*`
-      : "";
-
   return joinLines(
     heading(2, "Recent Work"),
     "",
-    table(headers, rows),
-    statsLine
+    table(headers, rows)
   );
 }
 
