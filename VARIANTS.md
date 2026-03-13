@@ -21,6 +21,7 @@ This repository uses a Notion-powered pipeline to generate the GitHub profile RE
 | `README.technical-showcase.md` | Engineering Dashboard | GitHub stats/streak/top-langs cards, for-the-badge skill badge grid, repo pin cards, Mermaid Gantt milestones, metrics dashboard. |
 | `README.quiet-premium.md` | Luxury Minimal | Subtle capsule-render accents, skills woven into tagline, top 3 projects with monochrome resource buttons, icon-only links, extreme negative space. |
 | `README.systems-focused.md` | Connected Studio | Mermaid graph ecosystem diagram, `<kbd>` styled skills, category-grouped projects with resource badges, week-grouped activity log, next-step display. |
+| `README.refined.md` | Curated Blend | Blue/grey waving header, typing SVG, GitHub stats + top languages (no grade/streak), prominent project titles with collapsible details and resource links, hybrid work log table, enhanced milestone table with resolved links, icon+text contact badges, friendly auto-generated footer. |
 
 ## Switching the primary variant
 
@@ -31,6 +32,7 @@ Set the `PRIMARY_VARIANT` repository variable (not secret) in GitHub to one of:
 - `technical-showcase`
 - `quiet-premium`
 - `systems-focused`
+- `refined`
 
 Or set it as an environment variable when running locally:
 

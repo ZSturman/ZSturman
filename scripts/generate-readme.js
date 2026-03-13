@@ -39,6 +39,7 @@ const VARIANTS = {
   "technical-showcase": require("./variants/technical-showcase"),
   "quiet-premium": require("./variants/quiet-premium"),
   "systems-focused": require("./variants/systems-focused"),
+  "refined": require("./variants/refined"),
 };
 
 const DEFAULT_PRIMARY = "editorial-clean";
