@@ -164,21 +164,49 @@ function renderProjectEntry(p) {
 function renderRecentWork(workLogs) {
   if (!workLogs.length) return null;
 
-  const headers = ["Date", "Duration", "Project", "Entry", "What Happened"];
-  const rows = workLogs.slice(0, 7).map((log) => {
-    const date = formatDateShort(log.sessionStart || log.date) || "—";
-    const duration = formatDuration(log.duration);
-    const project = log.projectName || "—";
-    const entry = truncate(log.entry || "", 50);
-    const whatHappened = truncate(log.whatHappened || "", 60);
-    return [date, duration, project, entry, whatHappened];
-  });
+  const items = workLogs.slice(0, 7).map((log, index) => renderWorkLogEntry(log, index === 0));
 
   return joinLines(
     heading(2, "Recent Work"),
     "",
-    table(headers, rows)
+    items.join("\n\n")
   );
+}
+
+function renderWorkLogEntry(log, isOpen = false) {
+  const summaryParts = [
+    `<strong>${escapeHtml(formatDateShort(log.sessionStart || log.date) || "—")}</strong>`,
+    escapeHtml(log.projectName || "Independent work"),
+  ];
+
+  const duration = formatDuration(log.duration);
+  if (duration !== "—") {
+    summaryParts.push(`<code>${escapeHtml(duration)}</code>`);
+  }
+
+  if (log.entry) {
+    summaryParts.push(escapeHtml(log.entry));
+  }
+
+  const content = [];
+
+  if (log.entry) {
+    content.push(`**Entry**  \n${log.entry.trim()}`);
+  }
+
+  if (log.whatHappened) {
+    content.push(`**What Happened**  \n${log.whatHappened.trim()}`);
+  }
+
+  if (log.nextStep) {
+    content.push(`**Next Step**  \n${log.nextStep.trim()}`);
+  }
+
+  if (log.problems) {
+    content.push(`**Problems**  \n${log.problems.trim()}`);
+  }
+
+  return `<details${isOpen ? " open" : ""}>\n<summary>${summaryParts.join(" · ")}</summary>\n\n${content.join("\n\n")}\n\n</details>`;
 }
 
 // ── Section 5 — Active Milestones (table, no Gantt, no links column) ────────
@@ -296,6 +324,14 @@ function formatDuration(minutes) {
   if (!hours) return `${roundedMinutes}m`;
   if (!remainder) return `${hours}h`;
   return `${hours}h ${remainder}m`;
+}
+
+function escapeHtml(text) {
+  return String(text || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;");
 }
 
 module.exports = { generate };
