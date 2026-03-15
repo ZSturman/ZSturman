@@ -46,7 +46,7 @@ function generate(data) {
     renderHero(),
     renderStats(),
     renderProjects(projects),
-    renderRecentWork(workLogs, stats),
+    renderRecentWork(workLogs),
     renderMilestones(milestones),
     renderLinks(links),
     renderFooter(links),
@@ -89,15 +89,9 @@ function renderHero() {
   );
 }
 
-// ── Section 2 — Stats (contributions + top languages, no grade/streak) ──────
+// ── Section 2 — Top Languages ───────────────────────────────────────────────
 
 function renderStats() {
-  // Build the stats card URL manually so we can include hide_rank
-  const statsUrl =
-    "https://github-readme-stats.vercel.app/api" +
-    "?username=ZSturman&show_icons=true&theme=transparent" +
-    "&hide_title=false&hide_border=true&hide_rank=true";
-
   // Top languages card (compact layout)
   const langsUrl =
     "https://github-readme-stats.vercel.app/api/top-langs/" +
@@ -108,7 +102,6 @@ function renderStats() {
     alignCenter(
       joinLines(
         "",
-        `![GitHub Stats](${statsUrl})`,
         `![Top Languages](${langsUrl})`,
         ""
       )
@@ -168,16 +161,17 @@ function renderProjectEntry(p) {
 
 // ── Section 4 — Recent Work (table hybrid) ──────────────────────────────────
 
-function renderRecentWork(workLogs, stats) {
+function renderRecentWork(workLogs) {
   if (!workLogs.length) return null;
 
-  const headers = ["Date", "Project", "Entry", "What Happened"];
+  const headers = ["Date", "Duration", "Project", "Entry", "What Happened"];
   const rows = workLogs.slice(0, 7).map((log) => {
-    const date = formatDateShort(log.date) || "—";
+    const date = formatDateShort(log.sessionStart || log.date) || "—";
+    const duration = formatDuration(log.duration);
     const project = log.projectName || "—";
     const entry = truncate(log.entry || "", 50);
     const whatHappened = truncate(log.whatHappened || "", 60);
-    return [date, project, entry, whatHappened];
+    return [date, duration, project, entry, whatHappened];
   });
 
   return joinLines(
@@ -288,6 +282,20 @@ function findRepoUrl(project) {
   if (repo) return repo.url;
   const fallback = resources.find((r) => r.url);
   return fallback ? fallback.url : null;
+}
+
+function formatDuration(minutes) {
+  if (typeof minutes !== "number" || Number.isNaN(minutes) || minutes <= 0) {
+    return "—";
+  }
+
+  const roundedMinutes = Math.round(minutes);
+  const hours = Math.floor(roundedMinutes / 60);
+  const remainder = roundedMinutes % 60;
+
+  if (!hours) return `${roundedMinutes}m`;
+  if (!remainder) return `${hours}h`;
+  return `${hours}h ${remainder}m`;
 }
 
 module.exports = { generate };

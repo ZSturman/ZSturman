@@ -175,37 +175,49 @@ async function fetchRecentWorkLogs(limit = 10) {
   if (!dbId) return [];
 
   const pages = await queryAll(dbId, {
-    sorts: [{ property: "date", direction: "descending" }],
+    sorts: [{ property: "session start", direction: "descending" }],
     filter: { property: "public", checkbox: { equals: true } },
     page_size: limit,
   });
 
   // Resolve project names from relation IDs
-  const logs = pages.slice(0, limit).map((page) => ({
-    id: page.id,
-    date: extractDate(page, "date"),
-    entry: extractTitle(page, "entry"),
-    whatHappened: extractRichText(page, "What Happened"),
-    projectIds: extractRelationTitles(page, "project"),
-    sessionType: extractSelect(page, "Session type"),
-    duration: extractFormulaValue(page, "duration (min)"),
-    nextStep: extractRichText(page, "Next Step"),
-    problems: extractRichText(page, "Problems"),
-    sessionStart: extractDate(page, "session start"),
-    sessionEnd: extractDate(page, "session end"),
-  }));
+  const logs = pages.slice(0, limit).map((page) => {
+    const sessionStart = extractDate(page, "session start");
+    const fallbackDate = extractDate(page, "date");
+
+    return {
+      id: page.id,
+      date: sessionStart || fallbackDate,
+      entry: extractTitle(page, "entry"),
+      whatHappened: extractRichText(page, "What Happened"),
+      projectIds: extractRelationTitles(page, "project"),
+      sessionType: extractSelect(page, "Session type"),
+      duration: extractFormulaValue(page, "duration (min)"),
+      nextStep: extractRichText(page, "Next Step"),
+      problems: extractRichText(page, "Problems"),
+      sessionStart,
+      sessionEnd: extractDate(page, "session end"),
+    };
+  });
 
   // Batch-resolve project names for work logs
   const allProjectIds = [...new Set(logs.flatMap((l) => l.projectIds))];
   const projectNameMap = await resolvePageTitles(allProjectIds);
 
-  return logs.map((log) => ({
-    ...log,
-    projectName: log.projectIds
-      .map((id) => projectNameMap[id] || "")
-      .filter(Boolean)
-      .join(", "),
-  }));
+  return logs
+    .map((log) => ({
+      ...log,
+      projectName: log.projectIds
+        .map((id) => projectNameMap[id] || "")
+        .filter(Boolean)
+        .join(", "),
+    }))
+    .sort((left, right) => {
+      const leftTime = left.date ? new Date(left.date).getTime() : 0;
+      const rightTime = right.date ? new Date(right.date).getTime() : 0;
+      return rightTime - leftTime;
+    })
+    .slice(0, limit);
 }
 
 async function fetchPersonalLinks() {
