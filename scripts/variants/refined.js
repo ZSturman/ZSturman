@@ -46,7 +46,7 @@ function generate(data) {
     renderHero(),
     renderStats(),
     renderProjects(projects),
-    renderRecentWork(workLogs),
+    renderRecentWork(workLogs, projects),
     renderMilestones(milestones),
     renderLinks(links),
     renderFooter(links),
@@ -161,10 +161,13 @@ function renderProjectEntry(p) {
 
 // ── Section 4 — Recent Work (table hybrid) ──────────────────────────────────
 
-function renderRecentWork(workLogs) {
+function renderRecentWork(workLogs, projects) {
   if (!workLogs.length) return null;
 
-  const items = workLogs.slice(0, 7).map((log, index) => renderWorkLogEntry(log, index === 0));
+  const projectsById = new Map(projects.map((project) => [project.id, project]));
+  const items = workLogs
+    .slice(0, 7)
+    .map((log, index) => renderWorkLogEntry(log, projectsById, index === 0));
 
   return joinLines(
     heading(2, "Recent Work"),
@@ -173,7 +176,7 @@ function renderRecentWork(workLogs) {
   );
 }
 
-function renderWorkLogEntry(log, isOpen = false) {
+function renderWorkLogEntry(log, projectsById, isOpen = false) {
   const summaryParts = [
     `<strong>${escapeHtml(formatDateShort(log.sessionStart || log.date) || "—")}</strong>`,
     escapeHtml(log.projectName || "Independent work"),
@@ -189,21 +192,22 @@ function renderWorkLogEntry(log, isOpen = false) {
   }
 
   const content = [];
-
-  if (log.entry) {
-    content.push(`**Entry**  \n${log.entry.trim()}`);
-  }
+  const projectResources = collectWorkLogResources(log, projectsById);
 
   if (log.whatHappened) {
-    content.push(`**What Happened**  \n${log.whatHappened.trim()}`);
+    content.push(blockquote(log.whatHappened.trim()));
   }
 
   if (log.nextStep) {
-    content.push(`**Next Step**  \n${log.nextStep.trim()}`);
+    content.push(renderCallout("NOTE", "Next Step", log.nextStep.trim()));
   }
 
   if (log.problems) {
-    content.push(`**Problems**  \n${log.problems.trim()}`);
+    content.push(renderCallout("WARNING", "Problems", log.problems.trim()));
+  }
+
+  if (projectResources.length) {
+    content.push(renderCallout("TIP", "Public resources", resourceBadges(projectResources, "flat-square")));
   }
 
   return `<details${isOpen ? " open" : ""}>\n<summary>${summaryParts.join(" · ")}</summary>\n\n${content.join("\n\n")}\n\n</details>`;
@@ -324,6 +328,32 @@ function formatDuration(minutes) {
   if (!hours) return `${roundedMinutes}m`;
   if (!remainder) return `${hours}h`;
   return `${hours}h ${remainder}m`;
+}
+
+function collectWorkLogResources(log, projectsById) {
+  const seen = new Set();
+  const resources = [];
+
+  for (const projectId of log.projectIds || []) {
+    const project = projectsById.get(projectId);
+    for (const resource of project?.resources || []) {
+      if (!resource?.url || seen.has(resource.id)) continue;
+      seen.add(resource.id);
+      resources.push(resource);
+    }
+  }
+
+  return resources;
+}
+
+function renderCallout(type, title, body) {
+  const lines = [`> [!${type}]`, `> **${title}**`];
+
+  for (const line of String(body || "").split("\n")) {
+    lines.push(`> ${line}`);
+  }
+
+  return lines.join("\n");
 }
 
 function escapeHtml(text) {
