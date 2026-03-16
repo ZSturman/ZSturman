@@ -61,6 +61,34 @@
 
 </details>
 
+---
+
+### [**MediLedger**](https://github.com/ZSturman/MediLedger) <sub><sup style="color:#999">Complete · Regular updates</sup></sub>
+
+[![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/MediLedger)
+
+> A medication management tool centered on interactive Home Screen widgets. Users can log doses, track supply, monitor refills, and sync across Apple devices—moving medication tracking from the app to the widget for faster, simpler daily adherence.
+
+<details>
+<summary>More details</summary>
+
+> MediLedger is designed around a simple idea: most of what you need to do with your medication shouldn’t require opening an app. With interactive widgets, you can log a full or half dose, check how many pills you have left, see when your refill is coming up, and set up different widgets for different medications. The app handles both prescription and non-prescription meds, tracks strength and dosage, and keeps a full history of what you’ve taken. Everything syncs through SwiftData across iPhone, iPad, and Mac, and it works offline when it needs to. You can customize what each widget shows, set up alerts for refills, and rely on automatic calculations to keep your supply accurate without any extra effort.
+
+</details>
+
+---
+
+### **Frontend Collection** <sub><sup style="color:#999">Complete · Occasional updates</sup></sub>
+
+> This collection brings together different versions of my portfolio, each one capturing how my design sense, presentation choices, technical skill, and even career direction have shifted and sharpened over time.
+
+<details>
+<summary>More details</summary>
+
+> Across these versions, you can see me going from basic experiments with servers and deployment to paying more attention to how things actually feel to use. What started as me trying to learn the fundamentals turned into a steady process of trying something, seeing what worked, and adjusting. Each version added a small piece—a backend tweak, a visual idea, a different layout—and the whole set basically shows how I learn by building, fixing, and trying again.
+
+</details>
+
 ## Active Milestones
 | Milestone | Project | Progress | Status |
 | --- | --- | --- | --- |

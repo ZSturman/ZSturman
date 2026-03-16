@@ -347,10 +347,17 @@ function collectWorkLogResources(log, projectsById) {
 }
 
 function renderCallout(type, title, body) {
-  const lines = [`> [!${type}]`, `> **${title}**`];
+  const ICONS = {
+    NOTE: "📝",
+    WARNING: "⚠️",
+    TIP: "🔗",
+  };
+
+  const icon = ICONS[type] || "ℹ️";
+  const lines = [`> ${icon} **${title}**`];
 
   for (const line of String(body || "").split("\n")) {
-    lines.push(`> ${line}`);
+    lines.push(line.trim() ? `> ${line}` : ">");
   }
 
   return lines.join("\n");
