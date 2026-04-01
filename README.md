@@ -5,16 +5,10 @@
 </div>
 <div align="center">
 
-![Typing SVG](https://readme-typing-svg.demolab.com?lines=Building+tools+that+think+clearly%3BiOS+apps%2C+automation+systems%2C+and+cognitive+architectures%3BDesign-minded+engineering+with+attention+to+craft&color=6b7b8d&size=20&center=true&vCenter=true&width=600&duration=3500&pause=1200)
+![Typing SVG](https://readme-typing-svg.demolab.com?lines=Building+tools+with+humans+in+the+loop%3BAutomation+systems+and+cognitive+architectures%3BDesign-minded+engineering&color=6b7b8d&size=20&center=true&vCenter=true&width=600&duration=3500&pause=1200)
 
 </div>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
-
-<div align="center">
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ZSturman&theme=transparent&layout=compact&hide_border=true&langs_count=8)
-
-</div>
 
 ## Selected Work
 
@@ -63,31 +57,51 @@
 
 ---
 
-### [**MediLedger**](https://github.com/ZSturman/MediLedger) <sub><sup style="color:#999">Complete · Regular updates</sup></sub>
+### **My Notion Pipeline** <sub><sup style="color:#999">Active · Development</sup></sub>
 
-[![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/MediLedger)
-
-> A medication management tool centered on interactive Home Screen widgets. Users can log doses, track supply, monitor refills, and sync across Apple devices—moving medication tracking from the app to the widget for faster, simpler daily adherence.
+> A Notion-centered project operating system that turns structured project data into an always-up-to-date portfolio.
 
 <details>
 <summary>More details</summary>
 
-> MediLedger is designed around a simple idea: most of what you need to do with your medication shouldn’t require opening an app. With interactive widgets, you can log a full or half dose, check how many pills you have left, see when your refill is coming up, and set up different widgets for different medications. The app handles both prescription and non-prescription meds, tracks strength and dosage, and keeps a full history of what you’ve taken. Everything syncs through SwiftData across iPhone, iPad, and Mac, and it works offline when it needs to. You can customize what each widget shows, set up alerts for refills, and rely on automatic calculations to keep your supply accurate without any extra effort.
+> An automated project and portfolio workflow that uses Notion as the central source of truth for capturing, organizing, maintaining, and publishing work across its full lifecycle. What began as a folder-based system built on local files and .project.json evolved into a relational Notion workspace that connects project metadata, work logs, tasks, milestones, media, and documentation in one structured environment. Inside Notion, the system uses formulas, required-action logic, severity scoring, and visual workflow signals to make project readiness measurable and easier to manage. That structure reduces duplicate entry, improves documentation quality, and keeps projects consistently maintained as they move from idea to execution to presentation. When project data reaches the right state, n8n detects qualifying changes and assembles portfolio-ready JSON, which is then sent into a Python-based build pipeline that prepares content and media for a static portfolio site. Linear supports issue tracking, GitHub stores code and optimized assets, and Firebase Hosting serves the finished site. The result is a connected operating system for project operations and portfolio publishing: one that keeps documentation, execution, and presentation aligned with the real state of the work over time.
 
 </details>
 
----
+## Recent Work
 
-### **Frontend Collection** <sub><sup style="color:#999">Complete · Occasional updates</sup></sub>
+**last month coding snapshot**
 
-> This collection brings together different versions of my portfolio, each one capturing how my design sense, presentation choices, technical skill, and even career direction have shifted and sharpened over time.
+> **17 hrs 14 mins** total · **44 mins** daily avg · best day **Mar 28** (3 hrs 35 mins)
 
-<details>
-<summary>More details</summary>
+> Typed lines +2,936 / -1,026 · AI-assisted lines +38,375 / -703
 
-> Across these versions, you can see me going from basic experiments with servers and deployment to paying more attention to how things actually feel to use. What started as me trying to learn the fundamentals turned into a steady process of trying something, seeing what worked, and adjusting. Each version added a small piece—a backend tweak, a visual idea, a different layout—and the whole set basically shows how I learn by building, fixing, and trying again.
+**Languages**
 
-</details>
+| Language | Time | Share |
+| --- | --- | --- |
+| Markdown | 8 hrs 2 mins | `██████░░░░░░ 47%` |
+| TypeScript | 2 hrs 54 mins | `██░░░░░░░░░░ 17%` |
+| Python | 2 hrs 53 mins | `██░░░░░░░░░░ 17%` |
+| JSON | 1 hr 7 mins | `█░░░░░░░░░░░ 7%` |
+| Git Config | 37 mins | `░░░░░░░░░░░░ 4%` |
+| Other | 24 mins | `░░░░░░░░░░░░ 2%` |
+
+**Projects**
+
+| Project | Time | Share |
+| --- | --- | --- |
+| zachary-sturman | 2 hrs 29 mins | `██░░░░░░░░░░ 14%` |
+| Articles | 1 hr 55 mins | `█░░░░░░░░░░░ 11%` |
+| Runtime Storyboard Debugger | 1 hr 37 mins | `█░░░░░░░░░░░ 9%` |
+| ToT | 1 hr 31 mins | `█░░░░░░░░░░░ 9%` |
+| 16 Personalities and Moral… | 1 hr 13 mins | `█░░░░░░░░░░░ 7%` |
+
+**Environment**
+
+| Editors | Systems | Work Types |
+| --- | --- | --- |
+| VS Code · 99%<br>Unknown Editor · 1% | Mac · 100% | Writing Docs · 43%<br>Coding · 41%<br>AI Coding · 15% |
 
 ## Active Milestones
 | Milestone | Project | Progress | Status |

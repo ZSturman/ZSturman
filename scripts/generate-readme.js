@@ -79,7 +79,7 @@ async function main() {
       fetchActiveMilestones(),
       fetchRecentCompletedTasks(15),
       fetchResources(),
-      fetchWakaTimeStats("last_7_days"),
+      fetchWakaTimeStats("last_30_days"),
     ]);
 
     const projects = unwrap(projectsResult, "projects");

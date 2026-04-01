@@ -40,14 +40,12 @@ function gradientDivider() {
 // ── Entry point ──────────────────────────────────────────────────────────────
 
 function generate(data) {
-  const { projects, workLogs, milestones, links, stats, wakatime } = data;
+  const { projects, workLogs, milestones, links, wakatime } = data;
 
   const sections = [
     safeRender(() => renderHero(), "hero"),
-    safeRender(() => renderStats(), "stats"),
-    safeRender(() => renderWakaTime(wakatime), "wakatime"),
     safeRender(() => renderProjects(projects), "projects"),
-    safeRender(() => renderRecentWork(workLogs, projects), "recentWork"),
+    safeRender(() => renderRecentWork(workLogs, projects, wakatime), "recentWork"),
     safeRender(() => renderMilestones(milestones), "milestones"),
     safeRender(() => renderLinks(links), "links"),
     safeRender(() => renderFooter(links), "footer"),
@@ -87,9 +85,9 @@ function renderHero() {
 
   const typing = typingSvg(
     [
-      "Building tools that think clearly about how people work",
-      "iOS apps, automation systems, and cognitive architectures",
-      "Design-minded engineering with attention to craft",
+      "Building tools with humans in the loop",
+      "Automation systems and cognitive architectures",
+      "Design-minded engineering",
     ],
     { color: ACCENT_COLOR, size: 20, duration: 3500, pause: 1200, width: 600 }
   );
@@ -103,69 +101,62 @@ function renderHero() {
   );
 }
 
-// ── Section 2 — Top Languages ───────────────────────────────────────────────
+// ── Recent Work activity snapshot ────────────────────────────────────────────
 
-function renderStats() {
-  // Top languages card (compact layout)
-  const langsUrl =
-    "https://github-readme-stats.vercel.app/api/top-langs/" +
-    "?username=ZSturman&theme=transparent&layout=compact" +
-    "&hide_border=true&langs_count=8";
-
-  return joinLines(
-    alignCenter(
-      joinLines(
-        "",
-        `![Top Languages](${langsUrl})`,
-        ""
-      )
-    )
-  );
-}
-
-// ── Section 2b — WakaTime Coding Activity ───────────────────────────────────
-
-function renderWakaTime(wakatime) {
+function renderActivitySnapshot(wakatime) {
   if (!wakatime) return null;
 
   const parts = [];
+  const rangeName = wakatime.human_readable_range || "last 30 days";
 
-  // Summary line
   const totalText = wakatime.human_readable_total_including_other_language
     || wakatime.human_readable_total
     || null;
   const dailyAvg = wakatime.human_readable_daily_average_including_other_language
     || wakatime.human_readable_daily_average
     || null;
-  const rangeName = wakatime.human_readable_range || "this week";
+  const bestDay = formatBestDay(wakatime.best_day);
+
+  parts.push(`**${rangeName} coding snapshot**`);
 
   if (totalText || dailyAvg) {
     const summaryItems = [];
-    if (totalText) summaryItems.push(`${bold(totalText)} ${rangeName}`);
+    if (totalText) summaryItems.push(`${bold(totalText)} total`);
     if (dailyAvg) summaryItems.push(`${bold(dailyAvg)} daily avg`);
-    parts.push(blockquote(`🕐 ${summaryItems.join(" · ")}`));
+    if (bestDay) summaryItems.push(`best day ${bestDay}`);
+    parts.push(blockquote(summaryItems.join(" · ")));
+  } else if (bestDay) {
+    parts.push(blockquote(`best day ${bestDay}`));
   }
 
-  // Languages table
-  const languages = (wakatime.languages || []).filter(l => l.percent > 0).slice(0, 8);
-  if (languages.length) {
-    const headers = ["Language", "Time", ""];
-    const rows = languages.map(lang => {
-      const pct = Math.round(lang.percent || 0);
-      const bar = `\`${progressBar(pct, 16)}\``;
-      const time = lang.text || "—";
-      return [lang.name, time, bar];
-    });
-    parts.push(table(headers, rows));
+  const lineChanges = formatLineChangeSummary(wakatime);
+  if (lineChanges) {
+    parts.push(blockquote(lineChanges));
   }
 
-  if (!parts.length) return null;
+  const languagesTable = renderRankTable("Language", wakatime.languages, 6, { maxLabelLength: 20 });
+  if (languagesTable) {
+    parts.push("**Languages**");
+    parts.push(languagesTable);
+  }
 
-  return joinLines(
-    heading(2, "Coding Activity"),
-    "",
-    ...parts
-  );
+  const projectsTable = renderRankTable("Project", wakatime.projects, 5, { maxLabelLength: 28 });
+  if (projectsTable) {
+    parts.push("**Projects**");
+    parts.push(projectsTable);
+  }
+
+  const contextTable = renderContextTable(wakatime);
+  if (contextTable) {
+    parts.push("**Environment**");
+    parts.push(contextTable);
+  }
+
+  if (parts.length === 1 && parts[0] === `**${rangeName} coding snapshot**`) {
+    return null;
+  }
+
+  return parts.join("\n\n");
 }
 
 // ── Section 3 — Projects ────────────────────────────────────────────────────
@@ -218,21 +209,29 @@ function renderProjectEntry(p) {
   return parts.join("\n\n");
 }
 
-// ── Section 4 — Recent Work (table hybrid) ──────────────────────────────────
+// ── Section 4 — Recent Work (table hybrid + activity snapshot) ──────────────
 
-function renderRecentWork(workLogs, projects) {
-  if (!workLogs.length) return null;
+function renderRecentWork(workLogs, projects, wakatime) {
+  const recentLogs = Array.isArray(workLogs) ? workLogs : [];
+  const projectsList = Array.isArray(projects) ? projects : [];
+  const activitySnapshot = renderActivitySnapshot(wakatime);
 
-  const projectsById = new Map(projects.map((project) => [project.id, project]));
-  const items = workLogs
+  if (!recentLogs.length && !activitySnapshot) return null;
+
+  const projectsById = new Map(projectsList.map((project) => [project.id, project]));
+  const items = recentLogs
     .slice(0, 7)
     .map((log, index) => renderWorkLogEntry(log, projectsById, index === 0));
 
-  return joinLines(
-    heading(2, "Recent Work"),
-    "",
-    items.join("\n\n")
-  );
+  const body = [];
+  if (items.length) {
+    body.push(items.join("\n\n"));
+  }
+  if (activitySnapshot) {
+    body.push(activitySnapshot);
+  }
+
+  return `${heading(2, "Recent Work")}\n\n${body.join("\n\n")}`;
 }
 
 function renderWorkLogEntry(log, projectsById, isOpen = false) {
@@ -405,14 +404,134 @@ function collectWorkLogResources(log, projectsById) {
   return resources;
 }
 
+function renderRankTable(label, items, limit, options = {}) {
+  const rows = (items || [])
+    .filter((item) => item && item.name && ((item.percent || 0) > 0 || (item.total_seconds || 0) > 0))
+    .slice(0, limit)
+    .map((item) => {
+      const pct = Math.round(item.percent || 0);
+      const name = sanitizeTableCell(truncate(item.name, options.maxLabelLength || 24));
+      const time = sanitizeTableCell(item.text || item.digital || "—");
+      const share = inlineCode(progressBar(pct, 12));
+      return [name, time, share];
+    });
+
+  if (!rows.length) return null;
+
+  return table([label, "Time", "Share"], rows);
+}
+
+function renderContextTable(wakatime) {
+  const editors = formatCompactBreakdown(wakatime.editors, 3, 20);
+  const systems = formatCompactBreakdown(wakatime.operating_systems, 2, 18);
+  const workTypes = formatCompactBreakdown(wakatime.categories, 3, 18);
+
+  if (!editors && !systems && !workTypes) return null;
+
+  return table(
+    ["Editors", "Systems", "Work Types"],
+    [[editors || "—", systems || "—", workTypes || "—"]]
+  );
+}
+
+function formatCompactBreakdown(items, limit, maxLabelLength) {
+  const lines = (items || [])
+    .filter((item) => item && item.name && ((item.percent || 0) > 0 || (item.total_seconds || 0) > 0))
+    .slice(0, limit)
+    .map((item) => {
+      const name = sanitizeTableCell(truncate(item.name, maxLabelLength));
+      const pct = Math.round(item.percent || 0);
+      const pctText = pct > 0 ? `${pct}%` : sanitizeTableCell(item.text || "—");
+      return `${name} · ${pctText}`;
+    });
+
+  return lines.length ? lines.join("<br>") : null;
+}
+
+function formatBestDay(bestDay) {
+  if (!bestDay) return null;
+
+  const label = formatCalendarDay(bestDay.date);
+  const total = bestDay.text || null;
+
+  if (label && total) {
+    return `${bold(label)} (${sanitizeText(total)})`;
+  }
+  if (label) {
+    return bold(sanitizeText(label));
+  }
+  if (total) {
+    return bold(sanitizeText(total));
+  }
+
+  return null;
+}
+
+function formatCalendarDay(dateText) {
+  if (!dateText) return null;
+
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(dateText));
+  if (match) {
+    const monthNames = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    const month = monthNames[Number(match[2]) - 1];
+    const day = String(Number(match[3]));
+    return month ? `${month} ${day}` : String(dateText);
+  }
+
+  return formatDateShort(dateText) || String(dateText);
+}
+
+function formatLineChangeSummary(wakatime) {
+  const typed = formatLineChangePair("Typed lines", wakatime.human_additions, wakatime.human_deletions);
+  const assisted = formatLineChangePair("AI-assisted lines", wakatime.ai_additions, wakatime.ai_deletions);
+  const parts = [typed, assisted].filter(Boolean);
+  return parts.length ? parts.join(" · ") : null;
+}
+
+function formatLineChangePair(label, additions, deletions) {
+  const add = formatCount(additions, "+");
+  const remove = formatCount(deletions, "-");
+  const parts = [add, remove].filter(Boolean);
+  return parts.length ? `${label} ${parts.join(" / ")}` : null;
+}
+
+function formatCount(value, prefix = "") {
+  if (typeof value !== "number" || Number.isNaN(value) || value <= 0) {
+    return null;
+  }
+
+  return `${prefix}${value.toLocaleString("en-US")}`;
+}
+
+function sanitizeTableCell(text) {
+  return sanitizeText(text).replace(/\|/g, "\\|");
+}
+
+function sanitizeText(text) {
+  return escapeHtml(String(text || "").replace(/\n+/g, " ").trim());
+}
+
 function renderCallout(type, title, body) {
   const ICONS = {
-    NOTE: "📝",
-    WARNING: "⚠️",
-    TIP: "🔗",
+    NOTE: "/",
+    WARNING: "!",
+    TIP: "?",
   };
 
-  const icon = ICONS[type] || "ℹ️";
+  const icon = ICONS[type] || "ℹ";
   const lines = [`> ${icon} **${title}**`];
 
   for (const line of String(body || "").split("\n")) {
