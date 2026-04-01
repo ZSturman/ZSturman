@@ -40,19 +40,33 @@ function gradientDivider() {
 // ── Entry point ──────────────────────────────────────────────────────────────
 
 function generate(data) {
-  const { projects, workLogs, milestones, links, stats } = data;
+  const { projects, workLogs, milestones, links, stats, wakatime } = data;
 
   const sections = [
-    renderHero(),
-    renderStats(),
-    renderProjects(projects),
-    renderRecentWork(workLogs, projects),
-    renderMilestones(milestones),
-    renderLinks(links),
-    renderFooter(links),
+    safeRender(() => renderHero(), "hero"),
+    safeRender(() => renderStats(), "stats"),
+    safeRender(() => renderWakaTime(wakatime), "wakatime"),
+    safeRender(() => renderProjects(projects), "projects"),
+    safeRender(() => renderRecentWork(workLogs, projects), "recentWork"),
+    safeRender(() => renderMilestones(milestones), "milestones"),
+    safeRender(() => renderLinks(links), "links"),
+    safeRender(() => renderFooter(links), "footer"),
   ];
 
   return sections.filter(Boolean).join("\n\n") + "\n";
+}
+
+/**
+ * Wrap a render function so that failures are logged and the section is omitted.
+ */
+function safeRender(fn, label) {
+  try {
+    const result = fn();
+    return result || null;
+  } catch (err) {
+    console.warn(`Section "${label}" skipped — ${err.message}`);
+    return null;
+  }
 }
 
 // ── Section 1 — Hero / Header ────────────────────────────────────────────────
@@ -106,6 +120,51 @@ function renderStats() {
         ""
       )
     )
+  );
+}
+
+// ── Section 2b — WakaTime Coding Activity ───────────────────────────────────
+
+function renderWakaTime(wakatime) {
+  if (!wakatime) return null;
+
+  const parts = [];
+
+  // Summary line
+  const totalText = wakatime.human_readable_total_including_other_language
+    || wakatime.human_readable_total
+    || null;
+  const dailyAvg = wakatime.human_readable_daily_average_including_other_language
+    || wakatime.human_readable_daily_average
+    || null;
+  const rangeName = wakatime.human_readable_range || "this week";
+
+  if (totalText || dailyAvg) {
+    const summaryItems = [];
+    if (totalText) summaryItems.push(`${bold(totalText)} ${rangeName}`);
+    if (dailyAvg) summaryItems.push(`${bold(dailyAvg)} daily avg`);
+    parts.push(blockquote(`🕐 ${summaryItems.join(" · ")}`));
+  }
+
+  // Languages table
+  const languages = (wakatime.languages || []).filter(l => l.percent > 0).slice(0, 8);
+  if (languages.length) {
+    const headers = ["Language", "Time", ""];
+    const rows = languages.map(lang => {
+      const pct = Math.round(lang.percent || 0);
+      const bar = `\`${progressBar(pct, 16)}\``;
+      const time = lang.text || "—";
+      return [lang.name, time, bar];
+    });
+    parts.push(table(headers, rows));
+  }
+
+  if (!parts.length) return null;
+
+  return joinLines(
+    heading(2, "Coding Activity"),
+    "",
+    ...parts
   );
 }
 

@@ -13,6 +13,7 @@
 //   NOTION_TASKS_DB_ID            — Tasks database ID
 //   NOTION_RESOURCES_DB_ID        — Resources database ID
 //   NOTION_AUTOMATION_LOGS_DB_ID  — Automation Logs database ID
+//   WAKATIME_API_KEY              — WakaTime API key for coding stats
 
 const fs = require("fs");
 const path = require("path");
@@ -29,6 +30,8 @@ const {
   fetchResources,
   computeStats,
 } = require("./lib/notion");
+
+const { fetchWakaTimeStats } = require("./lib/wakatime");
 
 const { logStart, logSuccess, logFailure } = require("./lib/automation-log");
 
@@ -68,6 +71,7 @@ async function main() {
       milestonesResult,
       tasksResult,
       resourcesResult,
+      wakatimeResult,
     ] = await Promise.allSettled([
       fetchFeaturedProjects(),
       fetchRecentWorkLogs(10),
@@ -75,6 +79,7 @@ async function main() {
       fetchActiveMilestones(),
       fetchRecentCompletedTasks(15),
       fetchResources(),
+      fetchWakaTimeStats("last_7_days"),
     ]);
 
     const projects = unwrap(projectsResult, "projects");
@@ -83,6 +88,7 @@ async function main() {
     const milestones = unwrap(milestonesResult, "milestones");
     const tasks = unwrap(tasksResult, "tasks");
     const resources = unwrap(resourcesResult, "resources");
+    const wakatime = wakatimeResult.status === "fulfilled" ? wakatimeResult.value : null;
 
     // Attach resources to their parent projects.
     // Use two strategies: (1) resource's projectIds (reverse relation),
@@ -121,7 +127,7 @@ async function main() {
         `${tasks.length} tasks, ${resources.length} resources`
     );
 
-    const data = { projects, workLogs, links, milestones, tasks, resources, stats };
+    const data = { projects, workLogs, links, milestones, tasks, resources, stats, wakatime };
 
     // ── Generate README ─────────────────────────────────────────────────
     console.log("Generating README...");

@@ -5,7 +5,7 @@
 </div>
 <div align="center">
 
-![Typing SVG](https://readme-typing-svg.demolab.com?lines=Building+tools+that+think+clearly+about+how+people+work%3BiOS+apps%2C+automation+systems%2C+and+cognitive+architectures%3BDesign-minded+engineering+with+attention+to+craft&color=6b7b8d&size=20&center=true&vCenter=true&width=600&duration=3500&pause=1200)
+![Typing SVG](https://readme-typing-svg.demolab.com?lines=Building+tools+that+think+clearly%3BiOS+apps%2C+automation+systems%2C+and+cognitive+architectures%3BDesign-minded+engineering+with+attention+to+craft&color=6b7b8d&size=20&center=true&vCenter=true&width=600&duration=3500&pause=1200)
 
 </div>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
