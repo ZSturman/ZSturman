@@ -40,13 +40,12 @@ function gradientDivider() {
 // ── Entry point ──────────────────────────────────────────────────────────────
 
 function generate(data) {
-  const { projects, workLogs, milestones, links, wakatime } = data;
+  const { projects, workLogs, links, wakatime } = data;
 
   const sections = [
     safeRender(() => renderHero(), "hero"),
     safeRender(() => renderProjects(projects), "projects"),
     safeRender(() => renderRecentWork(workLogs, projects, wakatime), "recentWork"),
-    safeRender(() => renderMilestones(milestones), "milestones"),
     safeRender(() => renderLinks(links), "links"),
     safeRender(() => renderFooter(links), "footer"),
   ];
@@ -271,25 +270,7 @@ function renderWorkLogEntry(log, projectsById, isOpen = false) {
   return `<details${isOpen ? " open" : ""}>\n<summary>${summaryParts.join(" · ")}</summary>\n\n${content.join("\n\n")}\n\n</details>`;
 }
 
-// ── Section 5 — Active Milestones (table, no Gantt, no links column) ────────
-
-function renderMilestones(milestones) {
-  if (!milestones.length) return null;
-
-  const headers = ["Milestone", "Project", "Progress", "Status"];
-  const rows = milestones.map((m) => {
-    const pct = m.taskPercentComplete ?? 0;
-    const bar = `\`${progressBar(pct, 12)}\``;
-    const project = m.projectName || "—";
-    const status = m.isBlocked ? "⚠ Blocked" : m.status || "In Progress";
-
-    return [bold(m.milestone), project, bar, status];
-  });
-
-  return joinLines(heading(2, "Active Milestones"), "", table(headers, rows));
-}
-
-// ── Section 6 — Contact / Links ─────────────────────────────────────────────
+// ── Section 5 — Contact / Links ─────────────────────────────────────────────
 
 function renderLinks(links) {
   if (!links.length) return null;

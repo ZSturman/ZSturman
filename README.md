@@ -103,11 +103,6 @@
 | --- | --- | --- |
 | VS Code · 99%<br>Unknown Editor · 1% | Mac · 100% | Writing Docs · 43%<br>Coding · 41%<br>AI Coding · 15% |
 
-## Active Milestones
-| Milestone | Project | Progress | Status |
-| --- | --- | --- | --- |
-| **Project Foundation** | Episodic Memory Agent | `░░░░░░░░░░░░ 0%` | In Progress |
-
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
 
