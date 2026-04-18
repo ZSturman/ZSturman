@@ -70,38 +70,111 @@
 
 ## Recent Work
 
+<details open>
+<summary><strong>Apr 17</strong> · The Wolf Pack · <code>8h</code> · Created new project entry for The Wolf Pack</summary>
+
+> Created new project entry for The Wolf Pack and added the 'Project Starter' milestones and tasks.
+
+> / **Next Step**
+> Complete to do items
+
+</details>
+
+<details>
+<summary><strong>Apr 7</strong> · Concept Memory System · <code>8h</code> · Created new project entry for Concept Memory System</summary>
+
+> Created new project entry for Concept Memory System and added the 'Project Starter' milestones and tasks.
+
+> / **Next Step**
+> Complete to do items
+
+</details>
+
+<details>
+<summary><strong>Apr 3</strong> · Media Organizer · <code>8h</code> · Created new project entry for Media Organizer</summary>
+
+> Created new project entry for Media Organizer and added the 'Project Starter' milestones and tasks.
+
+> / **Next Step**
+> Complete to do items
+
+</details>
+
+<details>
+<summary><strong>Mar 31</strong> · Psyche Agent · <code>8h</code> · Created new project entry for Psyche Agent</summary>
+
+> Created new project entry for Psyche Agent and added the 'Project Starter' milestones and tasks.
+
+> / **Next Step**
+> Complete to do items
+
+</details>
+
+<details>
+<summary><strong>Mar 30</strong> · Train of Thought Agent · <code>8h</code> · Created new project entry for Train of Thought Agent</summary>
+
+> Created new project entry for Train of Thought Agent and added the 'Project Starter' milestones and tasks.
+
+> / **Next Step**
+> Complete to do items
+
+</details>
+
+<details>
+<summary><strong>Mar 25</strong> · Runtime Storyboard Debugger · <code>1h</code> · Created new project entry for Runtime Storyboard Debugger</summary>
+
+> Created new project entry for Runtime Storyboard Debugger and added the 'Project Starter' milestones and tasks.
+
+> / **Next Step**
+> Push to github
+
+</details>
+
+<details>
+<summary><strong>Mar 22</strong> · My Notion Pipeline · <code>2h 30m</code> · Built Test DB design for easier ingest of projects</summary>
+
+> Learned a lot about Notion but didn’t actually get as far as I’d liked.
+
+> / **Next Step**
+> Move the stuff out of the Test area and into the main Notion app.
+
+> ! **Problems**
+> Didn’t achieve all the stuff I wanted and feel like loops are still open.
+
+</details>
+
 **last month coding snapshot**
 
-> **17 hrs 14 mins** total · **44 mins** daily avg · best day **Mar 28** (3 hrs 35 mins)
+> **29 hrs 34 mins** total · **1 hr 38 mins** daily avg · best day **Apr 1** (4 hrs 22 mins)
 
-> Typed lines +2,936 / -1,026 · AI-assisted lines +38,375 / -703
+> Typed lines +3,194 / -121 · AI-assisted lines +70,521 / -764
 
 **Languages**
 
 | Language | Time | Share |
 | --- | --- | --- |
-| Markdown | 8 hrs 2 mins | `██████░░░░░░ 47%` |
-| TypeScript | 2 hrs 54 mins | `██░░░░░░░░░░ 17%` |
-| Python | 2 hrs 53 mins | `██░░░░░░░░░░ 17%` |
-| JSON | 1 hr 7 mins | `█░░░░░░░░░░░ 7%` |
-| Git Config | 37 mins | `░░░░░░░░░░░░ 4%` |
-| Other | 24 mins | `░░░░░░░░░░░░ 2%` |
+| Markdown | 10 hrs 52 mins | `████░░░░░░░░ 37%` |
+| Other | 7 hrs 11 mins | `███░░░░░░░░░ 24%` |
+| TypeScript | 3 hrs 54 mins | `██░░░░░░░░░░ 13%` |
+| Python | 3 hrs 26 mins | `█░░░░░░░░░░░ 12%` |
+| Git Config | 1 hr 12 mins | `░░░░░░░░░░░░ 4%` |
+| YAML | 45 mins | `░░░░░░░░░░░░ 3%` |
 
 **Projects**
 
 | Project | Time | Share |
 | --- | --- | --- |
-| zachary-sturman | 2 hrs 29 mins | `██░░░░░░░░░░ 14%` |
-| Articles | 1 hr 55 mins | `█░░░░░░░░░░░ 11%` |
-| Runtime Storyboard Debugger | 1 hr 37 mins | `█░░░░░░░░░░░ 9%` |
-| ToT | 1 hr 31 mins | `█░░░░░░░░░░░ 9%` |
-| 16 Personalities and Moral… | 1 hr 13 mins | `█░░░░░░░░░░░ 7%` |
+| Articles | 3 hrs 50 mins | `██░░░░░░░░░░ 13%` |
+| Attention Flow | 2 hrs 32 mins | `█░░░░░░░░░░░ 9%` |
+| zachary-sturman | 2 hrs 24 mins | `█░░░░░░░░░░░ 8%` |
+| Unknown Project | 2 hrs 6 mins | `█░░░░░░░░░░░ 7%` |
+| ToT | 2 hrs 3 mins | `█░░░░░░░░░░░ 7%` |
 
 **Environment**
 
 | Editors | Systems | Work Types |
 | --- | --- | --- |
-| VS Code · 99%<br>Unknown Editor · 1% | Mac · 100% | Writing Docs · 43%<br>Coding · 41%<br>AI Coding · 15% |
+| VS Code · 94%<br>Unknown Editor · 6% | Mac · 100% | AI Coding · 39%<br>Writing Docs · 32%<br>Coding · 28% |
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
