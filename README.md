@@ -12,6 +12,21 @@
 
 ## Selected Work
 
+### [**The Wolf Project**](https://github.com/ZSturman/The-Wolf-Pack) <sub><sup style="color:#999">Active · Development</sup></sub>
+
+[![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/The-Wolf-Pack)
+
+> A recreation of the existing Wolf Pack site with more custom features and modernization 
+
+<details>
+<summary>More details</summary>
+
+> After discovering The Wolf Project through a Dodo video, I connected with the team and began rebuilding their website to better support their needs. The new version introduces structured data, dynamic content, and scalable infrastructure using Next.js, Firebase, and Cloudinary. It’s now a usable foundation that can evolve into a more complete system for showcasing cases, managing content, and supporting contributions.
+
+</details>
+
+---
+
 ### [**Top Note**](https://github.com/ZSturman/TopNote) <sub><sup style="color:#999">Complete · Regular updates</sup></sub>
 
 [![Github Repo](https://img.shields.io/badge/Github%20Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/TopNote) [![App Store](https://img.shields.io/badge/App%20Store-000000?style=flat-square&logo=apple&logoColor=white)](https://apps.apple.com/us/app/top-note/id6742725271)
@@ -71,12 +86,15 @@
 ## Recent Work
 
 <details open>
-<summary><strong>Apr 17</strong> · The Wolf Pack · <code>8h</code> · Created new project entry for The Wolf Pack</summary>
+<summary><strong>Apr 17</strong> · The Wolf Project · <code>8h</code> · Created new project entry for The Wolf Pack</summary>
 
 > Created new project entry for The Wolf Pack and added the 'Project Starter' milestones and tasks.
 
 > / **Next Step**
 > Complete to do items
+
+> ? **Public resources**
+> [![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/The-Wolf-Pack)
 
 </details>
 
