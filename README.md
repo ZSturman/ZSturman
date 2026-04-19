@@ -14,7 +14,7 @@
 
 ### [**The Wolf Project**](https://github.com/ZSturman/The-Wolf-Pack) <sub><sup style="color:#999">Active · Development</sup></sub>
 
-[![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/The-Wolf-Pack)
+[![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/The-Wolf-Pack) [![Development URL](https://img.shields.io/badge/Development%20URL-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://the-wolf-pack.vercel.app) [![Original Site](https://img.shields.io/badge/Original%20Site-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://yourdogcanstay.com)
 
 > A recreation of the existing Wolf Pack site with more custom features and modernization 
 
@@ -94,7 +94,7 @@
 > Complete to do items
 
 > ? **Public resources**
-> [![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/The-Wolf-Pack)
+> [![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/The-Wolf-Pack) [![Development URL](https://img.shields.io/badge/Development%20URL-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://the-wolf-pack.vercel.app) [![Original Site](https://img.shields.io/badge/Original%20Site-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://yourdogcanstay.com)
 
 </details>
 
