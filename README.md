@@ -163,27 +163,27 @@
 
 **last month coding snapshot**
 
-> **41 hrs 10 mins** total · **1 hr 52 mins** daily avg · best day **Apr 20** (5 hrs 24 mins)
+> **45 hrs 7 mins** total · **1 hr 57 mins** daily avg · best day **Apr 20** (5 hrs 24 mins)
 
-> Typed lines +4,498 / -165 · AI-assisted lines +75,670 / -1,505
+> Typed lines +4,629 / -396 · AI-assisted lines +76,368 / -1,618
 
 **Languages**
 
 | Language | Time | Share |
 | --- | --- | --- |
-| Markdown | 11 hrs 21 mins | `███░░░░░░░░░ 28%` |
-| TypeScript | 9 hrs 49 mins | `███░░░░░░░░░ 24%` |
-| Other | 9 hrs 25 mins | `███░░░░░░░░░ 23%` |
-| Python | 3 hrs 44 mins | `█░░░░░░░░░░░ 9%` |
+| TypeScript | 13 hrs 19 mins | `████░░░░░░░░ 30%` |
+| Markdown | 11 hrs 28 mins | `███░░░░░░░░░ 25%` |
+| Other | 9 hrs 33 mins | `███░░░░░░░░░ 21%` |
+| Python | 3 hrs 44 mins | `█░░░░░░░░░░░ 8%` |
 | JSON | 2 hrs 39 mins | `█░░░░░░░░░░░ 6%` |
-| Git Config | 1 hr 12 mins | `░░░░░░░░░░░░ 3%` |
+| Git Config | 1 hr 13 mins | `░░░░░░░░░░░░ 3%` |
 
 **Projects**
 
 | Project | Time | Share |
 | --- | --- | --- |
-| zachary-sturman | 10 hrs 21 mins | `███░░░░░░░░░ 25%` |
-| Wolf Pack | 4 hrs 24 mins | `█░░░░░░░░░░░ 11%` |
+| zachary-sturman | 14 hrs 11 mins | `████░░░░░░░░ 31%` |
+| Wolf Pack | 4 hrs 24 mins | `█░░░░░░░░░░░ 10%` |
 | Articles | 3 hrs 50 mins | `█░░░░░░░░░░░ 9%` |
 | Attention Flow | 2 hrs 32 mins | `█░░░░░░░░░░░ 6%` |
 | Unknown Project | 2 hrs 6 mins | `█░░░░░░░░░░░ 5%` |
@@ -192,7 +192,7 @@
 
 | Editors | Systems | Work Types |
 | --- | --- | --- |
-| VS Code · 96%<br>Unknown Editor · 4% | Mac · 100% | AI Coding · 47%<br>Coding · 29%<br>Writing Docs · 24% |
+| VS Code · 96%<br>Unknown Editor · 4% | Mac · 100% | AI Coding · 49%<br>Coding · 29%<br>Writing Docs · 22% |
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
