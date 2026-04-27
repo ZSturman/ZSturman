@@ -161,39 +161,6 @@
 
 </details>
 
-**last month coding snapshot**
-
-> **43 hrs 11 mins** total · **1 hr 57 mins** daily avg · best day **Apr 20** (5 hrs 24 mins)
-
-> Typed lines +4,276 / -396 · AI-assisted lines +77,903 / -1,703
-
-**Languages**
-
-| Language | Time | Share |
-| --- | --- | --- |
-| TypeScript | 13 hrs 25 mins | `████░░░░░░░░ 31%` |
-| Markdown | 10 hrs 2 mins | `███░░░░░░░░░ 23%` |
-| Other | 9 hrs 41 mins | `███░░░░░░░░░ 22%` |
-| Python | 2 hrs 59 mins | `█░░░░░░░░░░░ 7%` |
-| JSON | 2 hrs 39 mins | `█░░░░░░░░░░░ 6%` |
-| Git Config | 1 hr 10 mins | `░░░░░░░░░░░░ 3%` |
-
-**Projects**
-
-| Project | Time | Share |
-| --- | --- | --- |
-| zachary-sturman | 14 hrs 43 mins | `████░░░░░░░░ 34%` |
-| Wolf Pack | 4 hrs 24 mins | `█░░░░░░░░░░░ 10%` |
-| Articles | 2 hrs 49 mins | `█░░░░░░░░░░░ 7%` |
-| Attention Flow | 2 hrs 32 mins | `█░░░░░░░░░░░ 6%` |
-| ToT | 2 hrs 15 mins | `█░░░░░░░░░░░ 5%` |
-
-**Environment**
-
-| Editors | Systems | Work Types |
-| --- | --- | --- |
-| VS Code · 96%<br>Unknown Editor · 4% | Mac · 100% | AI Coding · 53%<br>Coding · 27%<br>Writing Docs · 19% |
-
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
 
