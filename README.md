@@ -163,26 +163,26 @@
 
 **last month coding snapshot**
 
-> **40 hrs 14 mins** total · **1 hr 44 mins** daily avg · best day **Apr 20** (5 hrs 27 mins)
+> **40 hrs 54 mins** total · **1 hr 46 mins** daily avg · best day **Apr 20** (5 hrs 27 mins)
 
-> Typed lines +2,599 / -398 · AI-assisted lines +46,648 / -1,371
+> Typed lines +2,599 / -398 · AI-assisted lines +46,909 / -1,467
 
 **Languages**
 
 | Language | Time | Share |
 | --- | --- | --- |
-| TypeScript | 14 hrs 6 mins | `████░░░░░░░░ 35%` |
-| Other | 9 hrs 36 mins | `███░░░░░░░░░ 24%` |
-| Markdown | 7 hrs 49 mins | `██░░░░░░░░░░ 19%` |
-| JSON | 2 hrs 47 mins | `█░░░░░░░░░░░ 7%` |
-| Python | 2 hrs 3 mins | `█░░░░░░░░░░░ 5%` |
-| Git Config | 54 mins | `░░░░░░░░░░░░ 2%` |
+| TypeScript | 13 hrs 54 mins | `████░░░░░░░░ 34%` |
+| Other | 9 hrs 45 mins | `███░░░░░░░░░ 24%` |
+| Markdown | 8 hrs 11 mins | `██░░░░░░░░░░ 20%` |
+| JSON | 2 hrs 46 mins | `█░░░░░░░░░░░ 7%` |
+| Python | 2 hrs 13 mins | `█░░░░░░░░░░░ 5%` |
+| Git Config | 55 mins | `░░░░░░░░░░░░ 2%` |
 
 **Projects**
 
 | Project | Time | Share |
 | --- | --- | --- |
-| zachary-sturman | 17 hrs 20 mins | `█████░░░░░░░ 43%` |
+| zachary-sturman | 17 hrs 20 mins | `█████░░░░░░░ 42%` |
 | Wolf Pack | 4 hrs 24 mins | `█░░░░░░░░░░░ 11%` |
 | Articles | 3 hrs 42 mins | `█░░░░░░░░░░░ 9%` |
 | Attention Flow | 2 hrs 32 mins | `█░░░░░░░░░░░ 6%` |
