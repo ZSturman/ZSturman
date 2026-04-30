@@ -163,36 +163,36 @@
 
 **last month coding snapshot**
 
-> **40 hrs 54 mins** total · **1 hr 46 mins** daily avg · best day **Apr 20** (5 hrs 27 mins)
+> **47 hrs 50 mins** total · **2 hrs 4 mins** daily avg · best day **Apr 29** (7 hrs 14 mins)
 
-> Typed lines +2,599 / -398 · AI-assisted lines +46,909 / -1,467
+> Typed lines +2,666 / -398 · AI-assisted lines +51,758 / -1,651
 
 **Languages**
 
 | Language | Time | Share |
 | --- | --- | --- |
-| TypeScript | 13 hrs 54 mins | `████░░░░░░░░ 34%` |
-| Other | 9 hrs 45 mins | `███░░░░░░░░░ 24%` |
-| Markdown | 8 hrs 11 mins | `██░░░░░░░░░░ 20%` |
-| JSON | 2 hrs 46 mins | `█░░░░░░░░░░░ 7%` |
-| Python | 2 hrs 13 mins | `█░░░░░░░░░░░ 5%` |
-| Git Config | 55 mins | `░░░░░░░░░░░░ 2%` |
+| TypeScript | 13 hrs 52 mins | `███░░░░░░░░░ 29%` |
+| Other | 12 hrs 21 mins | `███░░░░░░░░░ 26%` |
+| Markdown | 9 hrs 46 mins | `██░░░░░░░░░░ 20%` |
+| Python | 2 hrs 49 mins | `█░░░░░░░░░░░ 6%` |
+| JSON | 2 hrs 48 mins | `█░░░░░░░░░░░ 6%` |
+| Swift | 1 hr 59 mins | `░░░░░░░░░░░░ 4%` |
 
 **Projects**
 
 | Project | Time | Share |
 | --- | --- | --- |
-| zachary-sturman | 17 hrs 20 mins | `█████░░░░░░░ 42%` |
-| Wolf Pack | 4 hrs 24 mins | `█░░░░░░░░░░░ 11%` |
-| Articles | 3 hrs 42 mins | `█░░░░░░░░░░░ 9%` |
-| Attention Flow | 2 hrs 32 mins | `█░░░░░░░░░░░ 6%` |
-| Unknown Project | 1 hr 52 mins | `█░░░░░░░░░░░ 5%` |
+| zachary-sturman | 17 hrs 20 mins | `████░░░░░░░░ 36%` |
+| Wolf Pack | 4 hrs 24 mins | `█░░░░░░░░░░░ 9%` |
+| Articles | 3 hrs 42 mins | `█░░░░░░░░░░░ 8%` |
+| ChewSense | 2 hrs 48 mins | `█░░░░░░░░░░░ 6%` |
+| Attention Flow | 2 hrs 32 mins | `█░░░░░░░░░░░ 5%` |
 
 **Environment**
 
 | Editors | Systems | Work Types |
 | --- | --- | --- |
-| VS Code · 96%<br>Unknown Editor · 4% | Mac · 100% | AI Coding · 60%<br>Coding · 24%<br>Writing Docs · 16% |
+| VS Code · 97%<br>Unknown Editor · 3% | Mac · 100% | AI Coding · 64%<br>Coding · 20%<br>Writing Docs · 16% |
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
