@@ -163,36 +163,36 @@
 
 **last month coding snapshot**
 
-> **44 hrs 15 mins** total · **1 hr 55 mins** daily avg · best day **Apr 29** (7 hrs 14 mins)
+> **48 hrs 1 min** total · **2 hrs** daily avg · best day **Apr 29** (7 hrs 14 mins)
 
-> Typed lines +2,470 / -318 · AI-assisted lines +33,055 / -1,636
+> Typed lines +2,159 / -318 · AI-assisted lines +34,236 / -1,684
 
 **Languages**
 
 | Language | Time | Share |
 | --- | --- | --- |
-| TypeScript | 13 hrs 40 mins | `████░░░░░░░░ 31%` |
-| Other | 11 hrs 7 mins | `███░░░░░░░░░ 25%` |
-| Markdown | 8 hrs 57 mins | `██░░░░░░░░░░ 20%` |
-| Python | 2 hrs 37 mins | `█░░░░░░░░░░░ 6%` |
-| JSON | 2 hrs 26 mins | `█░░░░░░░░░░░ 6%` |
-| Swift | 1 hr 54 mins | `░░░░░░░░░░░░ 4%` |
+| TypeScript | 14 hrs 1 min | `███░░░░░░░░░ 29%` |
+| Other | 12 hrs 2 mins | `███░░░░░░░░░ 25%` |
+| Markdown | 9 hrs 52 mins | `███░░░░░░░░░ 21%` |
+| Python | 2 hrs 51 mins | `█░░░░░░░░░░░ 6%` |
+| Swift | 2 hrs 40 mins | `█░░░░░░░░░░░ 6%` |
+| JSON | 2 hrs 40 mins | `█░░░░░░░░░░░ 6%` |
 
 **Projects**
 
 | Project | Time | Share |
 | --- | --- | --- |
-| zachary-sturman | 16 hrs 5 mins | `████░░░░░░░░ 36%` |
-| Wolf Pack | 4 hrs 24 mins | `█░░░░░░░░░░░ 10%` |
-| Articles | 3 hrs 18 mins | `█░░░░░░░░░░░ 7%` |
-| ChewSense | 2 hrs 48 mins | `█░░░░░░░░░░░ 6%` |
-| Attention Flow | 2 hrs 32 mins | `█░░░░░░░░░░░ 6%` |
+| zachary-sturman | 16 hrs 5 mins | `████░░░░░░░░ 34%` |
+| Wolf Pack | 4 hrs 24 mins | `█░░░░░░░░░░░ 9%` |
+| ChewSense | 4 hrs 3 mins | `█░░░░░░░░░░░ 8%` |
+| ChewSense-RealTime | 3 hrs 25 mins | `█░░░░░░░░░░░ 7%` |
+| Articles | 3 hrs 23 mins | `█░░░░░░░░░░░ 7%` |
 
 **Environment**
 
 | Editors | Systems | Work Types |
 | --- | --- | --- |
-| VS Code · 96%<br>Unknown Editor · 4% | Mac · 100% | AI Coding · 67%<br>Coding · 17%<br>Writing Docs · 15% |
+| VS Code · 97%<br>Unknown Editor · 3% | Mac · 100% | AI Coding · 69%<br>Coding · 16%<br>Writing Docs · 15% |
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
