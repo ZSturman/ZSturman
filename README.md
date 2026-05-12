@@ -83,12 +83,47 @@
 
 </details>
 
+---
+
+### [**Transactions**](https://github.com/ZSturman/Transactions) <sub><sup style="color:#999">Complete · Occasional updates</sup></sub>
+
+[![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/Transactions) [![Visit](https://img.shields.io/badge/Visit-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://transactions-lmct.vercel.app/login)
+
+> A real-time shared expense tracker for recording, approving, and syncing transactions between two people.
+
+<details>
+<summary>More details</summary>
+
+> Transactions is a web app for managing shared balances with another person. It supports email or Google sign-in, invite-based pairing, transaction approvals and disputes, real-time Firestore sync, and optional email notifications for key activity.
+
+</details>
+
 ## Recent Work
 
 <details open>
 <summary><strong>May 11</strong> · Transactions · <code>8h</code> · Complete Transactions. 'Occasional updates'</summary>
 
 > Finalized project entry for Transactions.
+
+> ? **Public resources**
+> [![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/Transactions) [![Visit](https://img.shields.io/badge/Visit-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://transactions-lmct.vercel.app/login)
+
+</details>
+
+<details>
+<summary><strong>May 8</strong> · Marina Departure NOAA Risk Checker · <code>8h</code> · Complete Marina Departure NOAA Risk Checker. 'Occasional updates'</summary>
+
+> Finalized project entry for Marina Departure NOAA Risk Checker.
+
+</details>
+
+<details>
+<summary><strong>Apr 30</strong> · Marina Departure NOAA Risk Checker · <code>8h</code> · Created new project entry for Marina Departure NOAA Risk Checker</summary>
+
+> Created new project entry for Marina Departure NOAA Risk Checker and added the 'Project Starter' milestones and tasks.
+
+> / **Next Step**
+> Complete to do items
 
 </details>
 
@@ -132,26 +167,6 @@
 
 > / **Next Step**
 > Complete to do items
-
-</details>
-
-<details>
-<summary><strong>Mar 30</strong> · Train of Thought Agent · <code>8h</code> · Created new project entry for Train of Thought Agent</summary>
-
-> Created new project entry for Train of Thought Agent and added the 'Project Starter' milestones and tasks.
-
-> / **Next Step**
-> Complete to do items
-
-</details>
-
-<details>
-<summary><strong>Mar 25</strong> · Runtime Storyboard Debugger · <code>1h</code> · Created new project entry for Runtime Storyboard Debugger</summary>
-
-> Created new project entry for Runtime Storyboard Debugger and added the 'Project Starter' milestones and tasks.
-
-> / **Next Step**
-> Push to github
 
 </details>
 
