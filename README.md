@@ -86,6 +86,13 @@
 ## Recent Work
 
 <details open>
+<summary><strong>May 11</strong> · Transactions · <code>8h</code> · Complete Transactions. 'Occasional updates'</summary>
+
+> Finalized project entry for Transactions.
+
+</details>
+
+<details>
 <summary><strong>Apr 17</strong> · The Wolf Project · <code>8h</code> · Created new project entry for The Wolf Pack</summary>
 
 > Created new project entry for The Wolf Pack and added the 'Project Starter' milestones and tasks.
@@ -148,19 +155,6 @@
 
 </details>
 
-<details>
-<summary><strong>Mar 22</strong> · My Notion Pipeline · <code>2h 30m</code> · Built Test DB design for easier ingest of projects</summary>
-
-> Learned a lot about Notion but didn’t actually get as far as I’d liked.
-
-> / **Next Step**
-> Move the stuff out of the Test area and into the main Notion app.
-
-> ! **Problems**
-> Didn’t achieve all the stuff I wanted and feel like loops are still open.
-
-</details>
-
 **last month coding snapshot**
 
 > **59 hrs 26 mins** total · **2 hrs 28 mins** daily avg · best day **Apr 29** (7 hrs 14 mins)
@@ -197,7 +191,7 @@
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
 
-[![IMDb](https://img.shields.io/badge/IMDb-24292f?style=for-the-badge&logo=link&logoColor=white)](https://www.imdb.com/name/nm6373994/?ref_=ext_shr_lnk)&ensp;[![Threads](https://img.shields.io/badge/Threads-24292f?style=for-the-badge&logo=link&logoColor=white)](https://www.threads.com/@zachary.sturman)&ensp;[![Email](https://img.shields.io/badge/Email-24292f?style=for-the-badge&logo=gmail&logoColor=white)](mailto:zasturman@gmail.com)&ensp;[![BlueSky](https://img.shields.io/badge/BlueSky-24292f?style=for-the-badge&logo=link&logoColor=white)](https://bsky.app/profile/zacharysturman.bsky.social)&ensp;[![Instagram](https://img.shields.io/badge/Instagram-24292f?style=for-the-badge&logo=link&logoColor=white)](https://www.instagram.com/zachary.sturman/)&ensp;[![GitHub](https://img.shields.io/badge/GitHub-24292f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/zsturman)&ensp;[![X](https://img.shields.io/badge/X-24292f?style=for-the-badge&logo=link&logoColor=white)](https://x.com/XzckndhttqZ)&ensp;[![LinkedIn](https://img.shields.io/badge/LinkedIn-24292f?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/zacharysturman)&ensp;[![Portfolio](https://img.shields.io/badge/Portfolio-24292f?style=for-the-badge&logo=googlechrome&logoColor=white)](https://zacharysturman.com)
+[![IMDb](https://img.shields.io/badge/IMDb-24292f?style=for-the-badge&logo=link&logoColor=white)](https://www.imdb.com/name/nm6373994/?ref_=ext_shr_lnk)&ensp;[![Email](https://img.shields.io/badge/Email-24292f?style=for-the-badge&logo=gmail&logoColor=white)](mailto:zasturman@gmail.com)&ensp;[![BlueSky](https://img.shields.io/badge/BlueSky-24292f?style=for-the-badge&logo=link&logoColor=white)](https://bsky.app/profile/zacharysturman.bsky.social)&ensp;[![GitHub](https://img.shields.io/badge/GitHub-24292f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/zsturman)&ensp;[![X](https://img.shields.io/badge/X-24292f?style=for-the-badge&logo=link&logoColor=white)](https://x.com/XzckndhttqZ)&ensp;[![LinkedIn](https://img.shields.io/badge/LinkedIn-24292f?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/zacharysturman)&ensp;[![Portfolio](https://img.shields.io/badge/Portfolio-24292f?style=for-the-badge&logo=googlechrome&logoColor=white)](https://zacharysturman.com)
 
 </div>
 
