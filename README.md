@@ -151,7 +151,7 @@
 </details>
 
 <details>
-<summary><strong>Apr 3</strong> · Independent work · <code>8h</code> · Created new project entry for Media Organizer</summary>
+<summary><strong>Apr 3</strong> · Media Organizer · <code>8h</code> · Created new project entry for Media Organizer</summary>
 
 > Created new project entry for Media Organizer and added the 'Project Starter' milestones and tasks.
 
