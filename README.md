@@ -172,18 +172,18 @@
 
 **last month coding snapshot**
 
-> **48 hrs 56 mins** total · **2 hrs 19 mins** daily avg · best day **Apr 29** (7 hrs 23 mins)
+> **49 hrs 1 min** total · **2 hrs 20 mins** daily avg · best day **Apr 29** (7 hrs 23 mins)
 
-> Typed lines +982 / -3,654 · AI-assisted lines +147,100 / -1,980
+> Typed lines +775 / -3,642 · AI-assisted lines +142,885 / -1,689
 
 **Languages**
 
 | Language | Time | Share |
 | --- | --- | --- |
-| Markdown | 11 hrs 9 mins | `███░░░░░░░░░ 23%` |
-| TypeScript | 9 hrs 40 mins | `██░░░░░░░░░░ 20%` |
+| Markdown | 11 hrs 8 mins | `███░░░░░░░░░ 23%` |
+| TypeScript | 9 hrs 34 mins | `██░░░░░░░░░░ 20%` |
 | Python | 7 hrs 19 mins | `██░░░░░░░░░░ 15%` |
-| Other | 6 hrs 22 mins | `██░░░░░░░░░░ 13%` |
+| Other | 6 hrs 16 mins | `██░░░░░░░░░░ 13%` |
 | Swift | 4 hrs 58 mins | `█░░░░░░░░░░░ 10%` |
 | Bash | 3 hrs 36 mins | `█░░░░░░░░░░░ 7%` |
 
@@ -192,8 +192,8 @@
 | Project | Time | Share |
 | --- | --- | --- |
 | ChewSense | 7 hrs 10 mins | `██░░░░░░░░░░ 15%` |
-| zachary-sturman | 5 hrs 28 mins | `█░░░░░░░░░░░ 11%` |
 | ChewSense-RealTime | 5 hrs 15 mins | `█░░░░░░░░░░░ 11%` |
+| zachary-sturman | 4 hrs 44 mins | `█░░░░░░░░░░░ 10%` |
 | web | 4 hrs 43 mins | `█░░░░░░░░░░░ 10%` |
 | Social Post Automations | 4 hrs 24 mins | `█░░░░░░░░░░░ 9%` |
 
@@ -201,7 +201,7 @@
 
 | Editors | Systems | Work Types |
 | --- | --- | --- |
-| VS Code · 100% | Mac · 100% | AI Coding · 76%<br>Coding · 14%<br>Writing Docs · 10% |
+| VS Code · 100%<br>Unknown Editor · 1 min | Mac · 100% | AI Coding · 75%<br>Coding · 15%<br>Writing Docs · 10% |
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
