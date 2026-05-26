@@ -100,6 +100,76 @@
 
 ## Recent Work
 
+<details open>
+<summary><strong>May 11</strong> · Transactions · <code>8h</code> · Complete Transactions. 'Occasional updates'</summary>
+
+> Finalized project entry for Transactions.
+
+> ? **Public resources**
+> [![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/Transactions) [![Visit](https://img.shields.io/badge/Visit-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://transactions-lmct.vercel.app/login)
+
+</details>
+
+<details>
+<summary><strong>May 8</strong> · Marina Departure NOAA Risk Checker · <code>8h</code> · Complete Marina Departure NOAA Risk Checker. 'Occasional updates'</summary>
+
+> Finalized project entry for Marina Departure NOAA Risk Checker.
+
+</details>
+
+<details>
+<summary><strong>Apr 30</strong> · Marina Departure NOAA Risk Checker · <code>8h</code> · Created new project entry for Marina Departure NOAA Risk Checker</summary>
+
+> Created new project entry for Marina Departure NOAA Risk Checker and added the 'Project Starter' milestones and tasks.
+
+> / **Next Step**
+> Complete to do items
+
+</details>
+
+<details>
+<summary><strong>Apr 17</strong> · The Wolf Project · <code>8h</code> · Created new project entry for The Wolf Pack</summary>
+
+> Created new project entry for The Wolf Pack and added the 'Project Starter' milestones and tasks.
+
+> / **Next Step**
+> Complete to do items
+
+> ? **Public resources**
+> [![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/The-Wolf-Pack) [![Development URL](https://img.shields.io/badge/Development%20URL-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://the-wolf-pack.vercel.app) [![Original Site](https://img.shields.io/badge/Original%20Site-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://yourdogcanstay.com)
+
+</details>
+
+<details>
+<summary><strong>Apr 7</strong> · Concept Memory System · <code>8h</code> · Created new project entry for Concept Memory System</summary>
+
+> Created new project entry for Concept Memory System and added the 'Project Starter' milestones and tasks.
+
+> / **Next Step**
+> Complete to do items
+
+</details>
+
+<details>
+<summary><strong>Apr 3</strong> · Media Organizer · <code>8h</code> · Created new project entry for Media Organizer</summary>
+
+> Created new project entry for Media Organizer and added the 'Project Starter' milestones and tasks.
+
+> / **Next Step**
+> Complete to do items
+
+</details>
+
+<details>
+<summary><strong>Mar 31</strong> · Psyche Agent · <code>8h</code> · Created new project entry for Psyche Agent</summary>
+
+> Created new project entry for Psyche Agent and added the 'Project Starter' milestones and tasks.
+
+> / **Next Step**
+> Complete to do items
+
+</details>
+
 **last month coding snapshot**
 
 > **52 hrs 50 mins** total · **2 hrs 24 mins** daily avg · best day **Apr 29** (7 hrs 23 mins)
