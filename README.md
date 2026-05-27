@@ -203,9 +203,16 @@
 | --- | --- | --- |
 | VS Code · 100%<br>Unknown Editor · 1 min | Mac · 100% | AI Coding · 73%<br>Coding · 17%<br>Writing Docs · 9% |
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
 
-<sub>This page is generated from a Notion workspace and updates automatically.</sub>
+[![IMDb](https://img.shields.io/badge/IMDb-24292f?style=for-the-badge&logo=link&logoColor=white)](https://www.imdb.com/name/nm6373994/?ref_=ext_shr_lnk)&ensp;[![Email](https://img.shields.io/badge/Email-24292f?style=for-the-badge&logo=gmail&logoColor=white)](mailto:zasturman@gmail.com)&ensp;[![BlueSky](https://img.shields.io/badge/BlueSky-24292f?style=for-the-badge&logo=link&logoColor=white)](https://bsky.app/profile/zacharysturman.bsky.social)&ensp;[![GitHub](https://img.shields.io/badge/GitHub-24292f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/zsturman)&ensp;[![X](https://img.shields.io/badge/X-24292f?style=for-the-badge&logo=link&logoColor=white)](https://x.com/XzckndhttqZ)&ensp;[![LinkedIn](https://img.shields.io/badge/LinkedIn-24292f?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/zacharysturman)&ensp;[![Portfolio](https://img.shields.io/badge/Portfolio-24292f?style=for-the-badge&logo=googlechrome&logoColor=white)](https://zacharysturman.com)
+
+</div>
+
+<div align="center">
+
+<sub>This page is generated from a Notion workspace and updates automatically. To learn more about how this works, [reach out](mailto:zasturman@gmail.com).</sub>
 
 </div>
 <div align="center">
