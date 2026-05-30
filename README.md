@@ -172,7 +172,7 @@
 
 **last month coding snapshot**
 
-> **46 hrs 20 mins** total · **2 hrs 19 mins** daily avg · best day **Apr 29** (7 hrs 23 mins)
+> **46 hrs 20 mins** total · **2 hrs 19 mins** daily avg · best day **May 4** (5 hrs 44 mins)
 
 > Typed lines +45,416 / -43,270 · AI-assisted lines +104,513 / -539
 
