@@ -172,29 +172,29 @@
 
 **last month coding snapshot**
 
-> **46 hrs 20 mins** total · **2 hrs 19 mins** daily avg · best day **May 4** (5 hrs 44 mins)
+> **48 hrs 12 mins** total · **2 hrs 24 mins** daily avg · best day **May 4** (5 hrs 44 mins)
 
-> Typed lines +45,416 / -43,270 · AI-assisted lines +104,513 / -539
+> Typed lines +46,250 / -43,380 · AI-assisted lines +88,513 / -708
 
 **Languages**
 
 | Language | Time | Share |
 | --- | --- | --- |
-| TypeScript | 9 hrs 27 mins | `██░░░░░░░░░░ 20%` |
-| Markdown | 9 hrs 27 mins | `██░░░░░░░░░░ 20%` |
-| Python | 7 hrs 29 mins | `██░░░░░░░░░░ 16%` |
-| Other | 4 hrs 44 mins | `█░░░░░░░░░░░ 10%` |
-| JSON | 3 hrs 59 mins | `█░░░░░░░░░░░ 9%` |
-| Bash | 3 hrs 32 mins | `█░░░░░░░░░░░ 8%` |
+| Markdown | 9 hrs 7 mins | `██░░░░░░░░░░ 19%` |
+| TypeScript | 9 hrs 1 min | `██░░░░░░░░░░ 19%` |
+| Python | 7 hrs 36 mins | `██░░░░░░░░░░ 16%` |
+| Other | 4 hrs 46 mins | `█░░░░░░░░░░░ 10%` |
+| JSON | 4 hrs 10 mins | `█░░░░░░░░░░░ 9%` |
+| Swift | 3 hrs 55 mins | `█░░░░░░░░░░░ 8%` |
 
 **Projects**
 
 | Project | Time | Share |
 | --- | --- | --- |
-| ChewSense | 8 hrs 6 mins | `██░░░░░░░░░░ 18%` |
+| ChewSense | 9 hrs 5 mins | `██░░░░░░░░░░ 19%` |
 | zachary-sturman | 4 hrs 44 mins | `█░░░░░░░░░░░ 10%` |
-| web | 4 hrs 43 mins | `█░░░░░░░░░░░ 10%` |
-| Social Post Automations | 4 hrs 6 mins | `█░░░░░░░░░░░ 9%` |
+| web | 4 hrs 42 mins | `█░░░░░░░░░░░ 10%` |
+| Social Post Automations | 4 hrs 9 mins | `█░░░░░░░░░░░ 9%` |
 | ChewSense-RealTime | 2 hrs 47 mins | `█░░░░░░░░░░░ 6%` |
 
 **Environment**
