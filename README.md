@@ -172,36 +172,36 @@
 
 **last month coding snapshot**
 
-> **48 hrs 12 mins** total · **2 hrs 24 mins** daily avg · best day **May 4** (5 hrs 44 mins)
+> **49 hrs 47 mins** total · **2 hrs 29 mins** daily avg · best day **May 4** (5 hrs 44 mins)
 
-> Typed lines +46,250 / -43,380 · AI-assisted lines +88,513 / -708
+> Typed lines +46,275 / -43,380 · AI-assisted lines +88,639 / -711
 
 **Languages**
 
 | Language | Time | Share |
 | --- | --- | --- |
-| Markdown | 9 hrs 7 mins | `██░░░░░░░░░░ 19%` |
-| TypeScript | 9 hrs 1 min | `██░░░░░░░░░░ 19%` |
-| Python | 7 hrs 36 mins | `██░░░░░░░░░░ 16%` |
-| Other | 4 hrs 46 mins | `█░░░░░░░░░░░ 10%` |
-| JSON | 4 hrs 10 mins | `█░░░░░░░░░░░ 9%` |
-| Swift | 3 hrs 55 mins | `█░░░░░░░░░░░ 8%` |
+| Markdown | 9 hrs 8 mins | `██░░░░░░░░░░ 18%` |
+| TypeScript | 9 hrs 1 min | `██░░░░░░░░░░ 18%` |
+| Python | 7 hrs 52 mins | `██░░░░░░░░░░ 16%` |
+| Other | 5 hrs 5 mins | `█░░░░░░░░░░░ 10%` |
+| Swift | 4 hrs 47 mins | `█░░░░░░░░░░░ 10%` |
+| JSON | 4 hrs 10 mins | `█░░░░░░░░░░░ 8%` |
 
 **Projects**
 
 | Project | Time | Share |
 | --- | --- | --- |
-| ChewSense | 9 hrs 5 mins | `██░░░░░░░░░░ 19%` |
+| ChewSense | 10 hrs 11 mins | `██░░░░░░░░░░ 20%` |
 | zachary-sturman | 4 hrs 44 mins | `█░░░░░░░░░░░ 10%` |
-| web | 4 hrs 42 mins | `█░░░░░░░░░░░ 10%` |
-| Social Post Automations | 4 hrs 9 mins | `█░░░░░░░░░░░ 9%` |
+| web | 4 hrs 42 mins | `█░░░░░░░░░░░ 9%` |
+| Social Post Automations | 4 hrs 9 mins | `█░░░░░░░░░░░ 8%` |
 | ChewSense-RealTime | 2 hrs 47 mins | `█░░░░░░░░░░░ 6%` |
 
 **Environment**
 
 | Editors | Systems | Work Types |
 | --- | --- | --- |
-| VS Code · 100%<br>3 · 1 min | Mac · 100% | AI Coding · 72%<br>Coding · 20%<br>Writing Docs · 7% |
+| VS Code · 100%<br>3 · 1 min | Mac · 100% | AI Coding · 73%<br>Coding · 20%<br>Writing Docs · 7% |
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
