@@ -172,36 +172,36 @@
 
 **last month coding snapshot**
 
-> **49 hrs 47 mins** total · **2 hrs 29 mins** daily avg · best day **May 4** (5 hrs 44 mins)
+> **50 hrs 24 mins** total · **2 hrs 31 mins** daily avg · best day **May 4** (5 hrs 44 mins)
 
-> Typed lines +46,275 / -43,380 · AI-assisted lines +88,639 / -711
+> Typed lines +48,137 / -44,288 · AI-assisted lines +93,459 / -636
 
 **Languages**
 
 | Language | Time | Share |
 | --- | --- | --- |
-| Markdown | 9 hrs 8 mins | `██░░░░░░░░░░ 18%` |
-| TypeScript | 9 hrs 1 min | `██░░░░░░░░░░ 18%` |
-| Python | 7 hrs 52 mins | `██░░░░░░░░░░ 16%` |
-| Other | 5 hrs 5 mins | `█░░░░░░░░░░░ 10%` |
-| Swift | 4 hrs 47 mins | `█░░░░░░░░░░░ 10%` |
-| JSON | 4 hrs 10 mins | `█░░░░░░░░░░░ 8%` |
+| Markdown | 9 hrs 24 mins | `██░░░░░░░░░░ 19%` |
+| Python | 9 hrs 3 mins | `██░░░░░░░░░░ 18%` |
+| TypeScript | 8 hrs 40 mins | `██░░░░░░░░░░ 17%` |
+| Other | 4 hrs 59 mins | `█░░░░░░░░░░░ 10%` |
+| Bash | 4 hrs 7 mins | `█░░░░░░░░░░░ 8%` |
+| JSON | 4 hrs 1 min | `█░░░░░░░░░░░ 8%` |
 
 **Projects**
 
 | Project | Time | Share |
 | --- | --- | --- |
-| ChewSense | 10 hrs 11 mins | `██░░░░░░░░░░ 20%` |
-| zachary-sturman | 4 hrs 44 mins | `█░░░░░░░░░░░ 10%` |
+| ChewSense | 9 hrs 9 mins | `██░░░░░░░░░░ 18%` |
+| zachary-sturman | 4 hrs 44 mins | `█░░░░░░░░░░░ 9%` |
 | web | 4 hrs 42 mins | `█░░░░░░░░░░░ 9%` |
-| Social Post Automations | 4 hrs 9 mins | `█░░░░░░░░░░░ 8%` |
-| ChewSense-RealTime | 2 hrs 47 mins | `█░░░░░░░░░░░ 6%` |
+| Social Post Automations | 4 hrs 19 mins | `█░░░░░░░░░░░ 9%` |
+| Casino Exit Automations | 2 hrs 49 mins | `█░░░░░░░░░░░ 6%` |
 
 **Environment**
 
 | Editors | Systems | Work Types |
 | --- | --- | --- |
-| VS Code · 100%<br>3 · 1 min | Mac · 100% | AI Coding · 73%<br>Coding · 20%<br>Writing Docs · 7% |
+| VS Code · 100%<br>3 · 1 min | Mac · 100% | AI Coding · 69%<br>Coding · 23%<br>Writing Docs · 8% |
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
