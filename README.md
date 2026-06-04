@@ -172,36 +172,36 @@
 
 **last month coding snapshot**
 
-> **47 hrs 9 mins** total · **2 hrs 28 mins** daily avg · best day **May 4** (5 hrs 44 mins)
+> **42 hrs 17 mins** total · **2 hrs 13 mins** daily avg · best day **Jun 1** (4 hrs 35 mins)
 
-> Typed lines +48,135 / -44,282 · AI-assisted lines +83,952 / -554
+> Typed lines +48,121 / -44,516 · AI-assisted lines +71,132 / -514
 
 **Languages**
 
 | Language | Time | Share |
 | --- | --- | --- |
-| Python | 8 hrs 45 mins | `██░░░░░░░░░░ 19%` |
-| Markdown | 8 hrs 8 mins | `██░░░░░░░░░░ 17%` |
-| TypeScript | 8 hrs 6 mins | `██░░░░░░░░░░ 17%` |
-| Other | 4 hrs 51 mins | `█░░░░░░░░░░░ 10%` |
-| Bash | 3 hrs 52 mins | `█░░░░░░░░░░░ 8%` |
-| JSON | 3 hrs 43 mins | `█░░░░░░░░░░░ 8%` |
+| Python | 7 hrs 52 mins | `██░░░░░░░░░░ 19%` |
+| Markdown | 7 hrs 42 mins | `██░░░░░░░░░░ 18%` |
+| TypeScript | 6 hrs 16 mins | `██░░░░░░░░░░ 15%` |
+| Other | 4 hrs 5 mins | `█░░░░░░░░░░░ 10%` |
+| Bash | 3 hrs 56 mins | `█░░░░░░░░░░░ 9%` |
+| Lua | 3 hrs 32 mins | `█░░░░░░░░░░░ 8%` |
 
 **Projects**
 
 | Project | Time | Share |
 | --- | --- | --- |
-| ChewSense | 8 hrs 30 mins | `██░░░░░░░░░░ 18%` |
-| zachary-sturman | 4 hrs 44 mins | `█░░░░░░░░░░░ 10%` |
-| Social Post Automations | 4 hrs 19 mins | `█░░░░░░░░░░░ 9%` |
-| web | 3 hrs 13 mins | `█░░░░░░░░░░░ 7%` |
-| Casino Exit Automations | 2 hrs 49 mins | `█░░░░░░░░░░░ 6%` |
+| ChewSense | 7 hrs 28 mins | `██░░░░░░░░░░ 18%` |
+| Social Post Automations | 4 hrs 18 mins | `█░░░░░░░░░░░ 10%` |
+| zachary-sturman | 3 hrs 55 mins | `█░░░░░░░░░░░ 9%` |
+| Casino Exit Automations | 3 hrs 42 mins | `█░░░░░░░░░░░ 9%` |
+| web | 2 hrs 8 mins | `█░░░░░░░░░░░ 5%` |
 
 **Environment**
 
 | Editors | Systems | Work Types |
 | --- | --- | --- |
-| VS Code · 100%<br>3 · 1 min | Mac · 100% | AI Coding · 69%<br>Coding · 23%<br>Writing Docs · 7% |
+| VS Code · 100%<br>3 · 1 min | Mac · 100% | AI Coding · 68%<br>Coding · 23%<br>Writing Docs · 8% |
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
