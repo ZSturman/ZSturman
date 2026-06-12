@@ -172,36 +172,36 @@
 
 **last month coding snapshot**
 
-> **42 hrs 44 mins** total · **2 hrs 14 mins** daily avg · best day **Jun 8** (4 hrs 58 mins)
+> **38 hrs 36 mins** total · **2 hrs 8 mins** daily avg · best day **Jun 8** (4 hrs 58 mins)
 
-> Typed lines +47,584 / -40,949 · AI-assisted lines +43,338 / -737
+> Typed lines +47,557 / -40,932 · AI-assisted lines +43,176 / -737
 
 **Languages**
 
 | Language | Time | Share |
 | --- | --- | --- |
-| Python | 12 hrs 37 mins | `████░░░░░░░░ 30%` |
-| Markdown | 7 hrs 37 mins | `██░░░░░░░░░░ 18%` |
-| Other | 4 hrs 23 mins | `█░░░░░░░░░░░ 10%` |
-| Lua | 3 hrs 32 mins | `█░░░░░░░░░░░ 8%` |
-| Swift | 3 hrs 23 mins | `█░░░░░░░░░░░ 8%` |
-| TypeScript | 3 hrs 18 mins | `█░░░░░░░░░░░ 8%` |
+| Python | 12 hrs 19 mins | `████░░░░░░░░ 32%` |
+| Markdown | 7 hrs | `██░░░░░░░░░░ 18%` |
+| Lua | 3 hrs 32 mins | `█░░░░░░░░░░░ 9%` |
+| Swift | 3 hrs 23 mins | `█░░░░░░░░░░░ 9%` |
+| Other | 3 hrs 19 mins | `█░░░░░░░░░░░ 9%` |
+| TypeScript | 2 hrs 11 mins | `█░░░░░░░░░░░ 6%` |
 
 **Projects**
 
 | Project | Time | Share |
 | --- | --- | --- |
-| Casino Exit Automations | 13 hrs 58 mins | `████░░░░░░░░ 33%` |
-| ChewSense | 8 hrs 1 min | `██░░░░░░░░░░ 19%` |
-| zachary-sturman | 3 hrs 37 mins | `█░░░░░░░░░░░ 8%` |
-| 16 Personalities and Moral… | 1 hr 28 mins | `░░░░░░░░░░░░ 3%` |
-| hammerspoon | 1 hr 26 mins | `░░░░░░░░░░░░ 3%` |
+| Casino Exit Automations | 13 hrs 58 mins | `████░░░░░░░░ 36%` |
+| ChewSense | 8 hrs 1 min | `███░░░░░░░░░ 21%` |
+| 16 Personalities and Moral… | 1 hr 28 mins | `░░░░░░░░░░░░ 4%` |
+| hammerspoon | 1 hr 26 mins | `░░░░░░░░░░░░ 4%` |
+| zacharysturman | 1 hr 22 mins | `░░░░░░░░░░░░ 4%` |
 
 **Environment**
 
 | Editors | Systems | Work Types |
 | --- | --- | --- |
-| VS Code · 96%<br>Codex CLI · 3%<br>Visual · 4 mins | Mac · 100% | AI Coding · 75%<br>Coding · 16%<br>Writing Docs · 7% |
+| VS Code · 96%<br>Codex CLI · 4%<br>Visual · 4 mins | Mac · 100% | AI Coding · 75%<br>Coding · 17%<br>Writing Docs · 7% |
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
