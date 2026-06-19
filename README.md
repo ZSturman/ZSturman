@@ -172,27 +172,27 @@
 
 **last month coding snapshot**
 
-> **38 hrs 49 mins** total · **2 hrs 9 mins** daily avg · best day **Jun 8** (4 hrs 58 mins)
+> **36 hrs 1 min** total · **2 hrs 7 mins** daily avg · best day **Jun 8** (4 hrs 58 mins)
 
-> Typed lines +47,551 / -40,931 · AI-assisted lines +50,240 / -854
+> Typed lines +47,543 / -40,928 · AI-assisted lines +46,536 / -842
 
 **Languages**
 
 | Language | Time | Share |
 | --- | --- | --- |
-| Python | 12 hrs 43 mins | `████░░░░░░░░ 33%` |
-| Markdown | 7 hrs 33 mins | `██░░░░░░░░░░ 19%` |
-| Lua | 3 hrs 33 mins | `█░░░░░░░░░░░ 9%` |
-| Other | 3 hrs 27 mins | `█░░░░░░░░░░░ 9%` |
+| Python | 12 hrs 6 mins | `████░░░░░░░░ 34%` |
+| Markdown | 6 hrs 58 mins | `██░░░░░░░░░░ 19%` |
+| Lua | 3 hrs 33 mins | `█░░░░░░░░░░░ 10%` |
+| Other | 3 hrs 24 mins | `█░░░░░░░░░░░ 9%` |
 | Swift | 3 hrs 2 mins | `█░░░░░░░░░░░ 8%` |
-| TypeScript | 2 hrs 8 mins | `█░░░░░░░░░░░ 6%` |
+| Bash | 1 hr 47 mins | `█░░░░░░░░░░░ 5%` |
 
 **Projects**
 
 | Project | Time | Share |
 | --- | --- | --- |
-| Casino Exit Automations | 16 hrs 5 mins | `█████░░░░░░░ 41%` |
-| ChewSense | 9 hrs 2 mins | `███░░░░░░░░░ 23%` |
+| Casino Exit Automations | 16 hrs 5 mins | `█████░░░░░░░ 45%` |
+| ChewSense | 9 hrs 2 mins | `███░░░░░░░░░ 25%` |
 | 16 Personalities and Moral… | 1 hr 28 mins | `░░░░░░░░░░░░ 4%` |
 | hammerspoon | 1 hr 26 mins | `░░░░░░░░░░░░ 4%` |
 | zacharysturman | 1 hr 22 mins | `░░░░░░░░░░░░ 4%` |
@@ -201,7 +201,7 @@
 
 | Editors | Systems | Work Types |
 | --- | --- | --- |
-| VS Code · 96%<br>Codex CLI · 4%<br>Visual · 4 mins | Mac · 100% | AI Coding · 75%<br>Coding · 16%<br>Writing Docs · 8% |
+| VS Code · 96%<br>Codex CLI · 4%<br>Visual · 4 mins | Mac · 100% | AI Coding · 75%<br>Coding · 17%<br>Writing Docs · 8% |
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
