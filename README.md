@@ -172,16 +172,16 @@
 
 **last month coding snapshot**
 
-> **35 hrs 11 mins** total · **2 hrs 11 mins** daily avg · best day **Jun 8** (4 hrs 58 mins)
+> **34 hrs 34 mins** total · **2 hrs 18 mins** daily avg · best day **Jun 8** (4 hrs 58 mins)
 
-> Typed lines +47,535 / -40,928 · AI-assisted lines +46,527 / -839
+> Typed lines +47,535 / -40,928 · AI-assisted lines +46,526 / -839
 
 **Languages**
 
 | Language | Time | Share |
 | --- | --- | --- |
-| Python | 11 hrs 58 mins | `████░░░░░░░░ 34%` |
-| Markdown | 6 hrs 44 mins | `██░░░░░░░░░░ 19%` |
+| Python | 11 hrs 58 mins | `████░░░░░░░░ 35%` |
+| Markdown | 6 hrs 44 mins | `██░░░░░░░░░░ 20%` |
 | Lua | 3 hrs 33 mins | `█░░░░░░░░░░░ 10%` |
 | Swift | 3 hrs 2 mins | `█░░░░░░░░░░░ 9%` |
 | Other | 2 hrs 59 mins | `█░░░░░░░░░░░ 9%` |
@@ -191,7 +191,7 @@
 
 | Project | Time | Share |
 | --- | --- | --- |
-| Casino Exit Automations | 16 hrs 5 mins | `██████░░░░░░ 46%` |
+| Casino Exit Automations | 16 hrs 5 mins | `██████░░░░░░ 47%` |
 | ChewSense | 9 hrs 2 mins | `███░░░░░░░░░ 26%` |
 | 16 Personalities and Moral… | 1 hr 28 mins | `░░░░░░░░░░░░ 4%` |
 | hammerspoon | 1 hr 26 mins | `░░░░░░░░░░░░ 4%` |
