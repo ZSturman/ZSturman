@@ -14,36 +14,36 @@
 
 **last month coding snapshot**
 
-> **33 hrs 14 mins** total · **2 hrs 22 mins** daily avg · best day **Jun 8** (4 hrs 58 mins)
+> **29 hrs 25 mins** total · **2 hrs 15 mins** daily avg · best day **Jun 8** (4 hrs 58 mins)
 
-> Typed lines +47,517 / -40,924 · AI-assisted lines +46,340 / -839
+> Typed lines +47,515 / -40,922 · AI-assisted lines +43,666 / -835
 
 **Languages**
 
 | Language | Time | Share |
 | --- | --- | --- |
-| Python | 11 hrs 57 mins | `████░░░░░░░░ 36%` |
-| Markdown | 6 hrs 31 mins | `██░░░░░░░░░░ 20%` |
-| Lua | 3 hrs 33 mins | `█░░░░░░░░░░░ 11%` |
-| Swift | 3 hrs 2 mins | `█░░░░░░░░░░░ 9%` |
-| Other | 2 hrs 59 mins | `█░░░░░░░░░░░ 9%` |
-| Bash | 1 hr 46 mins | `█░░░░░░░░░░░ 5%` |
+| Python | 10 hrs 50 mins | `████░░░░░░░░ 37%` |
+| Markdown | 5 hrs 12 mins | `██░░░░░░░░░░ 18%` |
+| Lua | 3 hrs 33 mins | `█░░░░░░░░░░░ 12%` |
+| Swift | 2 hrs 47 mins | `█░░░░░░░░░░░ 10%` |
+| Other | 2 hrs 36 mins | `█░░░░░░░░░░░ 9%` |
+| Bash | 1 hr 46 mins | `█░░░░░░░░░░░ 6%` |
 
 **Projects**
 
 | Project | Time | Share |
 | --- | --- | --- |
-| Casino Exit Automations | 16 hrs 5 mins | `██████░░░░░░ 48%` |
-| ChewSense | 9 hrs 2 mins | `███░░░░░░░░░ 27%` |
-| hammerspoon | 1 hr 26 mins | `░░░░░░░░░░░░ 4%` |
-| Quantum Computing | 1 hr 4 mins | `░░░░░░░░░░░░ 3%` |
-| macOS Automations | 55 mins | `░░░░░░░░░░░░ 3%` |
+| Casino Exit Automations | 16 hrs 5 mins | `███████░░░░░ 55%` |
+| ChewSense | 8 hrs 37 mins | `███░░░░░░░░░ 29%` |
+| hammerspoon | 1 hr 26 mins | `█░░░░░░░░░░░ 5%` |
+| Quantum Computing | 1 hr 4 mins | `░░░░░░░░░░░░ 4%` |
+| Social Post Automations | 22 mins | `░░░░░░░░░░░░ 1%` |
 
 **Environment**
 
 | Editors | Systems | Work Types |
 | --- | --- | --- |
-| VS Code · 95%<br>Codex CLI · 4%<br>Visual · 4 mins | Mac · 100% | AI Coding · 77%<br>Coding · 15%<br>Writing Docs · 8% |
+| VS Code · 95%<br>Codex CLI · 5%<br>Visual · 4 mins | Mac · 100% | AI Coding · 76%<br>Coding · 16%<br>Writing Docs · 7% |
 
 <div align="center">
 
