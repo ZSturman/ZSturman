@@ -172,35 +172,35 @@
 
 **last month coding snapshot**
 
-> **10 hrs 22 mins** total · **2 hrs 35 mins** daily avg · best day **Jun 9** (4 hrs 46 mins)
+> **5 hrs 35 mins** total · **1 hr 51 mins** daily avg · best day **Jun 15** (2 hrs 6 mins)
 
-> Typed lines +4 / -3 · AI-assisted lines +15,258 / -173
+> Typed lines +4 / -1 · AI-assisted lines +10,220 / -118
 
 **Languages**
 
 | Language | Time | Share |
 | --- | --- | --- |
-| Other | 4 hrs 38 mins | `█████░░░░░░░ 45%` |
-| Python | 3 hrs 19 mins | `████░░░░░░░░ 32%` |
-| Markdown | 1 hr 47 mins | `██░░░░░░░░░░ 17%` |
-| Bash | 18 mins | `░░░░░░░░░░░░ 3%` |
-| Swift | 5 mins | `░░░░░░░░░░░░ 1%` |
-| JavaScript | 3 mins | `░░░░░░░░░░░░ 0%` |
+| Python | 2 hrs 18 mins | `█████░░░░░░░ 41%` |
+| Markdown | 1 hr 37 mins | `███░░░░░░░░░ 29%` |
+| Other | 1 hr 21 mins | `███░░░░░░░░░ 24%` |
+| Swift | 5 mins | `░░░░░░░░░░░░ 2%` |
+| JavaScript | 3 mins | `░░░░░░░░░░░░ 1%` |
+| Git Config | 2 mins | `░░░░░░░░░░░░ 1%` |
 
 **Projects**
 
 | Project | Time | Share |
 | --- | --- | --- |
-| Casino Exit Automations | 8 hrs 15 mins | `██████████░░ 80%` |
-| ChewSense | 2 hrs 4 mins | `██░░░░░░░░░░ 20%` |
-| ChewSense-RealTime | 1 min | `░░░░░░░░░░░░ 0%` |
+| Casino Exit Automations | 3 hrs 28 mins | `███████░░░░░ 62%` |
+| ChewSense | 2 hrs 4 mins | `████░░░░░░░░ 37%` |
+| ChewSense-RealTime | 1 min | `░░░░░░░░░░░░ 1%` |
 | ChewSense-DataCollection | 0 secs | `░░░░░░░░░░░░ 0%` |
 
 **Environment**
 
 | Editors | Systems | Work Types |
 | --- | --- | --- |
-| VS Code · 56%<br>Codex CLI · 44% | Mac · 100% | AI Coding · 94%<br>Writing Docs · 4%<br>Coding · 2% |
+| VS Code · 76%<br>Codex CLI · 24% | Mac · 100% | AI Coding · 92%<br>Writing Docs · 7%<br>Coding · 1% |
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
