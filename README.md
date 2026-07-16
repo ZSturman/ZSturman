@@ -172,34 +172,7 @@
 
 **last month coding snapshot**
 
-> **2 hrs 6 mins** total · **2 hrs 6 mins** daily avg · best day **Jun 15** (2 hrs 6 mins)
-
-> Typed lines +2 / -1 · AI-assisted lines +4,781 / -86
-
-**Languages**
-
-| Language | Time | Share |
-| --- | --- | --- |
-| Python | 51 mins | `█████░░░░░░░ 40%` |
-| Markdown | 43 mins | `████░░░░░░░░ 34%` |
-| Other | 22 mins | `██░░░░░░░░░░ 18%` |
-| Swift | 5 mins | `░░░░░░░░░░░░ 4%` |
-| Git Config | 2 mins | `░░░░░░░░░░░░ 2%` |
-| YAML | 1 min | `░░░░░░░░░░░░ 1%` |
-
-**Projects**
-
-| Project | Time | Share |
-| --- | --- | --- |
-| ChewSense | 2 hrs 4 mins | `████████████ 98%` |
-| ChewSense-RealTime | 1 min | `░░░░░░░░░░░░ 1%` |
-| ChewSense-DataCollection | 0 secs | `░░░░░░░░░░░░ 0%` |
-
-**Environment**
-
-| Editors | Systems | Work Types |
-| --- | --- | --- |
-| VS Code · 100% | Mac · 100% | AI Coding · 85%<br>Writing Docs · 15%<br>Building · 0 secs |
+> **0 secs** total · **0 secs** daily avg
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0%3A6b7b8d%2C100%3A8e9eab&height=2&section=header" width="100%" />
 <div align="center">
