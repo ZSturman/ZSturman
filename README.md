@@ -101,6 +101,16 @@
 ## Recent Work
 
 <details open>
+<summary><strong>Aug 26</strong> · Home Lab · <code>8h</code> · Created new project entry for Home Lab</summary>
+
+> Created new project entry for Home Lab and added the 'Project Starter' milestones and tasks.
+
+> / **Next Step**
+> Complete to do items
+
+</details>
+
+<details>
 <summary><strong>May 11</strong> · Transactions · <code>8h</code> · Complete Transactions. 'Occasional updates'</summary>
 
 > Finalized project entry for Transactions.
@@ -154,16 +164,6 @@
 <summary><strong>Apr 3</strong> · Media Organizer · <code>8h</code> · Created new project entry for Media Organizer</summary>
 
 > Created new project entry for Media Organizer and added the 'Project Starter' milestones and tasks.
-
-> / **Next Step**
-> Complete to do items
-
-</details>
-
-<details>
-<summary><strong>Mar 31</strong> · Psyche Agent · <code>8h</code> · Created new project entry for Psyche Agent</summary>
-
-> Created new project entry for Psyche Agent and added the 'Project Starter' milestones and tasks.
 
 > / **Next Step**
 > Complete to do items
