@@ -12,7 +12,7 @@
 
 ## Selected Work
 
-### [**The Wolf Project**](https://github.com/ZSturman/The-Wolf-Pack) <sub><sup style="color:#999">Active · Development</sup></sub>
+### [**The Wolf Project**](https://github.com/ZSturman/The-Wolf-Pack)
 
 [![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/The-Wolf-Pack) [![Development URL](https://img.shields.io/badge/Development%20URL-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://the-wolf-pack.vercel.app) [![Original Site](https://img.shields.io/badge/Original%20Site-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://yourdogcanstay.com)
 
@@ -27,7 +27,7 @@
 
 ---
 
-### [**Top Note**](https://github.com/ZSturman/TopNote) <sub><sup style="color:#999">Complete · Regular updates</sup></sub>
+### [**Top Note**](https://github.com/ZSturman/TopNote)
 
 [![Github Repo](https://img.shields.io/badge/Github%20Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/TopNote) [![App Store](https://img.shields.io/badge/App%20Store-000000?style=flat-square&logo=apple&logoColor=white)](https://apps.apple.com/us/app/top-note/id6742725271)
 
@@ -42,7 +42,7 @@
 
 ---
 
-### [**ChewSense**](https://github.com/ZSturman/ChewSense---Data-Collection-and-Labeling) <sub><sup style="color:#999">Active · Development</sup></sub>
+### [**ChewSense**](https://github.com/ZSturman/ChewSense---Data-Collection-and-Labeling)
 
 [![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/ChewSense---Data-Collection-and-Labeling)
 
@@ -57,7 +57,7 @@
 
 ---
 
-### [**Episodic Memory Agent**](https://github.com/ZSturman/Episodic-Memory-Agent) <sub><sup style="color:#999">Active · Development</sup></sub>
+### [**Episodic Memory Agent**](https://github.com/ZSturman/Episodic-Memory-Agent)
 
 [![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/Episodic-Memory-Agent)
 
@@ -72,7 +72,7 @@
 
 ---
 
-### **My Notion Pipeline** <sub><sup style="color:#999">Active · Development</sup></sub>
+### **My Notion Pipeline**
 
 > A Notion-centered project operating system that turns structured project data into an always-up-to-date portfolio.
 
@@ -85,7 +85,7 @@
 
 ---
 
-### [**Transactions**](https://github.com/ZSturman/Transactions) <sub><sup style="color:#999">Complete · Occasional updates</sup></sub>
+### [**Transactions**](https://github.com/ZSturman/Transactions)
 
 [![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/Transactions) [![Visit](https://img.shields.io/badge/Visit-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://transactions-lmct.vercel.app/login)
 
