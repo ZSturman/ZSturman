@@ -101,9 +101,9 @@
 ## Recent Work
 
 <details open>
-<summary><strong>Oct 10</strong> · Hue Light Control · <code>21m</code> · Hue Light Control — portfolio packaging</summary>
+<summary><strong>Oct 10</strong> · Hue Light Control · <code>35m</code> · Hue Light Control</summary>
 
-> Prepared the completed Hue controller for its hardware portfolio debut: documented setup, physical controls, wiring and local Hue commands; created six coordinated technical illustrations with editable SVG originals; registered project-relative media and uploaded Notion previews through Better Workspace. Marked the linked project Complete / Release, added hardware metadata, and curated the original October 9 work log. Firmware compilation and focused portfolio importer tests passed. The portfolio package includes responsive media, a wiring gallery and public work logs.
+> Worked on the Hue Light Control project, specifically within the docs workspace. Used ChatGPT, Finder, SecurityAgent, and Xcode. Changed 4 files.
 
 </details>
 
