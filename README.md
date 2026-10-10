@@ -101,6 +101,13 @@
 ## Recent Work
 
 <details open>
+<summary><strong>Oct 10</strong> · Hue Light Control · <code>21m</code> · Hue Light Control — portfolio packaging</summary>
+
+> Prepared the completed Hue controller for its hardware portfolio debut: documented setup, physical controls, wiring and local Hue commands; created six coordinated technical illustrations with editable SVG originals; registered project-relative media and uploaded Notion previews through Better Workspace. Marked the linked project Complete / Release, added hardware metadata, and curated the original October 9 work log. Firmware compilation and focused portfolio importer tests passed. The portfolio package includes responsive media, a wiring gallery and public work logs.
+
+</details>
+
+<details>
 <summary><strong>Aug 26</strong> · Home Lab · <code>8h</code> · Created new project entry for Home Lab</summary>
 
 > Created new project entry for Home Lab and added the 'Project Starter' milestones and tasks.
@@ -154,16 +161,6 @@
 <summary><strong>Apr 7</strong> · Concept Memory System · <code>8h</code> · Created new project entry for Concept Memory System</summary>
 
 > Created new project entry for Concept Memory System and added the 'Project Starter' milestones and tasks.
-
-> / **Next Step**
-> Complete to do items
-
-</details>
-
-<details>
-<summary><strong>Apr 3</strong> · Media Organizer · <code>8h</code> · Created new project entry for Media Organizer</summary>
-
-> Created new project entry for Media Organizer and added the 'Project Starter' milestones and tasks.
 
 > / **Next Step**
 > Complete to do items
