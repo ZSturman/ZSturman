@@ -101,9 +101,9 @@
 ## Recent Work
 
 <details open>
-<summary><strong>Oct 10</strong> · Hue Light Control · <code>35m</code> · Hue Light Control</summary>
+<summary><strong>Oct 10</strong> · Hue Light Control · <code>30m</code> · Hue Light Control</summary>
 
-> Worked on the Hue Light Control project, specifically within the docs workspace. Used ChatGPT, Finder, SecurityAgent, and Xcode. Changed 4 files.
+> Worked on the Hue Light Control project using Better Workspace, ChatGPT, ChatGPT Classic, and Code in the /Users/zacharysturman/Workspace/Projects/Hue Light Control workspace.
 
 </details>
 
