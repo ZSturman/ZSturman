@@ -44,7 +44,7 @@
 
 ### [**ChewSense**](https://github.com/ZSturman/ChewSense---Data-Collection-and-Labeling)
 
-[![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/ChewSense---Data-Collection-and-Labeling)
+[![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/ChewSense---Data-Collection-and-Labeling) [![Install from App Store](https://img.shields.io/badge/Install%20from%20App%20Store-000000?style=flat-square&logo=apple&logoColor=white)](https://apps.apple.com/us/app/chew-sense-collect-and-label/id6755277802)
 
 > An iOS app that uses AirPods’ motion sensors to detect chewing and help users eat more mindfully by slowing down their pace.
 
@@ -87,14 +87,14 @@
 
 ### [**Transactions**](https://github.com/ZSturman/Transactions)
 
-[![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/Transactions) [![Visit](https://img.shields.io/badge/Visit-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://transactions-lmct.vercel.app/login)
+[![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/Transactions) [![Visit](https://img.shields.io/badge/Visit-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://transactions-lmct.vercel.app/login) [![Try demo](https://img.shields.io/badge/Try%20demo-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://zacharysturman.com/transactions/demo)
 
-> A real-time shared expense tracker for recording, approving, and syncing transactions between two people.
+> Shared expenses and balances across web, iPhone, iPad and Android.
 
 <details>
 <summary>More details</summary>
 
-> Transactions is a web app for managing shared balances with another person. It supports email or Google sign-in, invite-based pairing, transaction approvals and disputes, real-time Firestore sync, and optional email notifications for key activity.
+> Track shared expenses, approvals and balances across the web, iOS and Android. Native Expo/React Native clients share Firebase Authentication and Firestore records with the Next.js web app. The web app is live; iOS 1.0.0 is waiting for Apple review with automatic release. Android store publication is deferred.
 
 </details>
 
@@ -123,7 +123,7 @@
 > Finalized project entry for Transactions.
 
 > ? **Public resources**
-> [![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/Transactions) [![Visit](https://img.shields.io/badge/Visit-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://transactions-lmct.vercel.app/login)
+> [![Repo](https://img.shields.io/badge/Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ZSturman/Transactions) [![Visit](https://img.shields.io/badge/Visit-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://transactions-lmct.vercel.app/login) [![Try demo](https://img.shields.io/badge/Try%20demo-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://zacharysturman.com/transactions/demo)
 
 </details>
 
